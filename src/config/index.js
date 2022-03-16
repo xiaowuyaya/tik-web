@@ -1,0 +1,1 @@
+export const logoUrl = "http://qiniu.eiko.ren/serendipity.png"
