@@ -7,24 +7,22 @@
       <!-- 介绍 -->
       <div class="text">
         <img class="logo" :src="logoUrl" alt="serendipity-logo" />
-        <h1 class="title">GitHub Notifications & Activities on your Desktop</h1>
-        <h2 class="slogan">AKA "TWEETDECK FOR GITHUB"</h2>
+        <h1 class="title">Serendipity 英雄联盟对局助手</h1>
+        <h2 class="slogan">抓出队伍里的小内鬼，提升游戏体验！</h2>
         <h2 class="desc">
-          Create columns for the repositories and people that matters to you;
-          Receive Desktop Push Notifications; Manage Notifications, Issues, Pull
-          Requests & Activities; Bookmark things for later.
+          主要功能是通过获取游戏开始时的双方玩家的历史对局数据（也可在英雄选择时队友的历史对局数据），对数据进行<b>算法分析</b>。<br/>依照算法，对每个人的历史对局数据进行评分。
+          根据评分结果，得出每位玩家的大致游戏水平，在游戏中能做出针对性的判断结果。<br/> 同时工具内还包含了多种其他有趣的功能...
         </h2>
       </div>
 
       <!-- 按钮 -->
       <div class="btns">
-        <div class="down">Download</div>
-        <div class="down sub">sub</div>
+        <div class="down">下载软件</div>
+        <div class="down sub">查看描述</div>
       </div>
     </div>
   </div>
 </template>
-
 
 <script setup>
 import Nav from "@/components/nav.vue";
@@ -32,7 +30,6 @@ import Nav from "@/components/nav.vue";
 import { ref } from "vue";
 import { logoUrl } from "../config/index";
 </script>
-
 
 <style scoped>
 .index-container {
@@ -83,7 +80,7 @@ import { logoUrl } from "../config/index";
   color: #5191d9;
   text-transform: uppercase;
   font-style: italic;
-  font-weight: 200;
+  font-weight: 400;
   text-align: center;
   margin-bottom: 1.5rem;
   line-height: 1.625;
@@ -104,6 +101,7 @@ import { logoUrl } from "../config/index";
   display: flex;
   flex-direction: row;
   justify-content: center;
+
 }
 
 .content .btns .down {
@@ -116,16 +114,17 @@ import { logoUrl } from "../config/index";
   color: #0d2621;
   margin-bottom: 0.5rem;
   margin-right: 0.5rem;
+  margin-right: 4rem;
   font-weight: 600;
   justify-content: center;
   align-items: center;
-  border: 1px solid #5191d9;
+  border: 1px solid #e1f0ff;
   border-radius: 999px;
-  background-color: #5191d9;
+  background-color: #e1f0ff;
 }
 
-.content .btns .sub{
-  background-color: #DCE5F0;
-  border: 1px solid #DCE5F0;
-} 
+.content .btns .sub {
+  background-color: #dce5f0;
+  border: 1px solid #dce5f0;
+}
 </style>
