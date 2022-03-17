@@ -1,7 +1,5 @@
 <template>
   <div class="index-container">
-    <!-- 导航栏标题 -->
-    <Nav></Nav>
     <!-- 内容 -->
     <div class="content">
       <!-- 介绍 -->
@@ -10,35 +8,56 @@
         <h1 class="title">Serendipity 英雄联盟对局助手</h1>
         <h2 class="slogan">抓出队伍里的小内鬼，提升游戏体验！</h2>
         <h2 class="desc">
-          主要功能是通过获取游戏开始时的双方玩家的历史对局数据（也可在英雄选择时队友的历史对局数据），对数据进行<b>算法分析</b>。<br/>依照算法，对每个人的历史对局数据进行评分。
-          根据评分结果，得出每位玩家的大致游戏水平，在游戏中能做出针对性的判断结果。<br/> 同时工具内还包含了多种其他有趣的功能...
+          主要功能是通过获取游戏开始时的双方玩家的历史对局数据（也可在英雄选择时队友的历史对局数据），对数据进行<b>算法分析</b>。<br />依照算法，对每个人的历史对局数据进行评分。
+          根据评分结果，得出每位玩家的大致游戏水平，在游戏中能做出针对性的判断结果。<br />
+          同时工具内还包含了多种其他有趣的功能...
         </h2>
       </div>
 
       <!-- 按钮 -->
       <div class="btns">
-        <div class="down">下载软件</div>
-        <div class="down sub">查看描述</div>
+        <div class="down" @click="router.push('/download')">下载软件</div>
+        <div class="down sub" @click="changeShowVideo">视频介绍</div>
       </div>
+
+      <!-- 介绍图 -->
+      <div class="show">
+        <div class="img">
+          <img :src="showImg" alt="展示图" />
+        </div>
+      </div>
+
+      <!-- 视频介绍弹窗 -->
+      <el-dialog v-model="showVideo" title="视频介绍" width="70%"> </el-dialog>
     </div>
+    <!-- 回到顶部 -->
+    <el-backtop right="20"></el-backtop>
   </div>
 </template>
 
 <script setup>
-import Nav from "@/components/nav.vue";
-
 import { ref } from "vue";
-import { logoUrl } from "../config/index";
+import { logoUrl, showImg } from "../config/index";
+import { useRouter } from "vue-router";
+
+const router = useRouter();
+const showVideo = ref(false);
+
+const changeShowVideo = () => {
+  showVideo.value = true;
+};
 </script>
 
 <style scoped>
 .index-container {
-  height: 100%;
+
   width: 100%;
 }
 
 .content {
-  width: 768px;
+    height: calc(100vh - 200px); /* 这个200px是header和footer的高度 */
+  width: 1200px;
+  height: 100%;
   margin-right: auto;
   margin-left: auto;
   padding-right: 2rem;
@@ -46,6 +65,7 @@ import { logoUrl } from "../config/index";
 }
 
 .content .text {
+  padding: 0 18%;
   display: flex;
   flex-direction: column;
   text-align: center;
@@ -98,33 +118,57 @@ import { logoUrl } from "../config/index";
 }
 
 .content .btns {
+  padding: 0 25%;
   display: flex;
   flex-direction: row;
   justify-content: center;
-
+  margin-bottom: 2rem;
 }
 
 .content .btns .down {
   text-decoration: inherit;
   cursor: pointer;
-  display: flex;
   padding: 0.5rem 2.5rem;
   white-space: nowrap;
   font-size: 1.3rem;
-  color: #0d2621;
-  margin-bottom: 0.5rem;
-  margin-right: 0.5rem;
-  margin-right: 4rem;
+  color: #fff;
+  margin: 0 auto 0.5rem auto;
   font-weight: 600;
-  justify-content: center;
-  align-items: center;
-  border: 1px solid #e1f0ff;
+  border: 1px solid #5191d9;
   border-radius: 999px;
-  background-color: #e1f0ff;
+  background-color: #5191d9;
+}
+
+.content .btns .down:hover {
+  background: #78a6df;
+  border: 1px solid #78a6df;
 }
 
 .content .btns .sub {
-  background-color: #dce5f0;
-  border: 1px solid #dce5f0;
+  background-color: #51d9a0;
+  border: 1px solid #51d9a0;
+}
+
+.content .btns .sub:hover{
+  background-color: #79dfb4;
+  border: 1px solid #79dfb4;
+}
+.show {
+  margin: auto;
+}
+
+.show .img {
+  margin-left: auto;
+  margin-right: auto;
+  height: 80%;
+  height: 80%;
+  border: 0.5rem solid #edf2f7;
+  border-radius: 0.5rem;
+  background-color: #edf2f7;
+}
+
+.show .img img {
+  width: 100%;
+  border-radius: 0.5rem;
 }
 </style>

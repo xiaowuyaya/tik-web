@@ -8,6 +8,18 @@ const routers = [
   {
     path: '/index',
     component: () => import('../views/index.vue')
+  },
+  {
+    path: '/download',
+    component: () => import('../views/download.vue')
+  },
+  {
+    path: '/open-source',
+    component: () => import('../views/open_source.vue')
+  },
+  {
+    path: '/connect',
+    component: () => import('../views/connect.vue')
   }
 ]
 

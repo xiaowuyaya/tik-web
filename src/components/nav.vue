@@ -1,21 +1,44 @@
 <template>
   <div class="nav-container">
-    <div class="logo">
+    <div class="logo" @click="routerTo('index')">
       <img :src="logoUrl" alt="serendipity-logo" />
       <div class="title">Serendipity</div>
     </div>
     <div class="menu">
-      <div class="link">下载</div>
-      <div class="link">功能</div>
-      <div class="link">开源文档</div>
-      <div class="link">联系我</div>
+      <div class="link" @click="routerTo(0)">下载</div>
+      <div class="link" @click="routerTo(1)">功能</div>
+      <div class="link" @click="routerTo(2)">开源文档</div>
+      <div class="link" @click="routerTo(3)">联系我</div>
     </div>
   </div>
 </template>
 
 <script setup>
 import { ref } from "vue";
-import { logoUrl } from "../config/index"
+import { useRouter } from "vue-router";
+import { logoUrl } from "../config/index";
+
+const router = useRouter();
+
+const routerTo = (index) => {
+  switch (index) {
+    case 0 :
+      router.push("/download");
+      break;
+    case 1 :
+      router.push("/index");
+      break;
+    case 2 :
+      router.push("/open-source");
+      break;
+    case 3 :
+      router.push("/connect");
+      break;
+    case 'index' :
+      router.push("/index");
+      break;
+  }
+}
 </script>
 
 <style scoped>
@@ -24,15 +47,18 @@ import { logoUrl } from "../config/index"
   display: flex;
   flex-direction: row;
   justify-content: space-around;
-  margin-bottom: 70px;
-  padding-bottom: 0.5rem;
-  border-bottom: 1px solid #edf2f7
+  padding: 0.5rem 0;
+  border-bottom: 1px solid #edf2f7;
+  background-color: #fff;
+  position: fixed;
+  top: 0px;
 }
 .logo {
   /* width: 25%; */
   display: flex;
   flex-direction: row;
   align-items: center;
+    cursor: pointer;
 }
 
 .logo img {
@@ -66,5 +92,10 @@ import { logoUrl } from "../config/index"
   border-width: 1px;
   border-color: transparent;
   background-color: transparent;
+  cursor: pointer;
+}
+
+.menu .link:hover {
+  color: #606266;
 }
 </style>
