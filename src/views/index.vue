@@ -18,7 +18,7 @@
       <div class="btns">
         <div class="down" @click="router.push('/download')">下载软件</div>
         <div class="down sub" @click="changeShowVideo">视频介绍</div>
-        <div class="down sub" @click="">了解算法</div>
+        <div class="down sub" >了解算法</div>
       </div>
 
       <!-- 介绍图 -->
@@ -110,7 +110,7 @@ const changeShowVideo = () => {
 
 .content .desc {
   width: 100%;
-  margin-bottom: 1.5rem;
+  margin-bottom: 1rem;
   line-height: 1.625;
   font-size: 1.25rem;
   font-weight: 400;
@@ -119,7 +119,7 @@ const changeShowVideo = () => {
 }
 
 .content .btns {
-  padding: 0 25%;
+  /* padding: 0 25%; */
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -127,16 +127,20 @@ const changeShowVideo = () => {
 }
 
 .content .btns .down {
-  text-decoration: inherit;
-  cursor: pointer;
-  padding: 0.5rem 2.5rem;
-  white-space: nowrap;
-  font-size: 1.3rem;
-  color: #fff;
-  margin: 0 auto 0.5rem auto;
-  font-weight: 600;
+      cursor: pointer;
+    display: inline-block;
+    min-width: 159px;
+    height: 48px;
+    line-height: 48px;
+    margin-top: 56px;
+    margin-right: 24px;
+    padding: 0 16px;
+    text-align: center;
+    font-size: 18px;
+    color: #fff;
+ 
   border: 1px solid #5191d9;
-  border-radius: 999px;
+  /* border-radius: 999px; */
   background-color: #5191d9;
 }
 
@@ -146,13 +150,15 @@ const changeShowVideo = () => {
 }
 
 .content .btns .sub {
-  background-color: #51d9a0;
-  border: 1px solid #51d9a0;
+  color: #5191d9;
+  background-color: #fff;
+  border: 1px solid #5191d9;
 }
 
 .content .btns .sub:hover{
-  background-color: #79dfb4;
-  border: 1px solid #79dfb4;
+  background-color: #78a6df;
+  border: 1px solid #78a6df;
+  color: #fff
 }
 .show {
   margin: auto;
