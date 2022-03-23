@@ -9,7 +9,7 @@
         <div class="btns">
           <div class="download">下载 Serendipity</div>
           <div class="desc">
-            <span>最新版本 {{last_version}}</span>
+            <span>最新版本 {{ last_version }}</span>
             <a href="#">更新日志</a>
           </div>
         </div>
@@ -25,8 +25,18 @@
 <script setup>
 import { ref } from "vue";
 import { showImg } from "../config/index";
+import Axios from "axios";
+import YAML from "yaml";
+import { latestVersion } from "../config/index";
 
-const last_version = ref('1.2.6')
+
+const last_version = ref("");
+
+// 获取版本
+Axios.get(latestVersion).then((res) => {
+  const last_version_config = YAML.parse(res.data);
+  last_version.value = last_version_config.version;
+});
 </script>
 <style scoped>
 .download-container {
@@ -97,27 +107,26 @@ const last_version = ref('1.2.6')
 }
 
 .btns .desc {
-      font-size: 14px;
-    line-height: 22px;
-    color: #585858;
-    margin-top: 0.5rem;
+  font-size: 14px;
+  line-height: 22px;
+  color: #585858;
+  margin-top: 0.5rem;
 }
 
-
-a{
+a {
   color: #096dd9;
-    text-decoration: none;
-    background-color: rgba(0,0,0,0);
-    outline: none;
-    cursor: pointer;
-    -webkit-transition: color .3s;
-    transition: color .3s;
-    -webkit-text-decoration-skip: objects;
-    margin-left: 8px;
-    font-size: 14px!important;
+  text-decoration: none;
+  background-color: rgba(0, 0, 0, 0);
+  outline: none;
+  cursor: pointer;
+  -webkit-transition: color 0.3s;
+  transition: color 0.3s;
+  -webkit-text-decoration-skip: objects;
+  margin-left: 8px;
+  font-size: 14px !important;
 }
 
-.content .img{
+.content .img {
   margin-left: 4rem;
   border: 0.5rem solid #edf2f7;
   border-radius: 0.5rem;

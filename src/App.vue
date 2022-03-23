@@ -1,6 +1,6 @@
 <script setup>
 import Nav from "@/components/nav.vue";
-console.log("serendipity.web");
+console.log(">>> Serendipity 英雄联盟对局助手 <<<");
 </script>
 
 <template>

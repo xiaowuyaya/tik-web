@@ -82,7 +82,7 @@
         <li>一键创建5V5训练模式</li>
         <li>通过游戏名一件观战玩家（可非好友，需要正在游戏中）</li>
       </ul>
-      <h2><a name="header-n79" class="md-header-anchor"></a>计分算法规则</h2>
+      <h2 id="sourceRules"><a name="header-n79" class="md-header-anchor"></a>计分算法规则</h2>
       <h3><a name="header-n80" class="md-header-anchor"></a>战绩权重</h3>
       <blockquote><p>最近20局 匹配 单排 组排 大乱斗的战绩</p></blockquote>
       <ul>
@@ -236,6 +236,16 @@
 </template>
 <script setup>
 import { logoUrl } from "../config/index";
+import { onMounted } from 'vue'
+import { useRouter } from "vue-router";
+
+const router = useRouter();
+
+onMounted(()=>{
+  // console.log(router.query);
+  // console.log(document.getElementById("sourceRules").scrollIntoView())
+})
+
 </script>
 
 <style scoped>

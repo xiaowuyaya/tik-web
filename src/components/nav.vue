@@ -52,6 +52,7 @@ const routerTo = (index) => {
   background-color: #fff;
   position: fixed;
   top: 0px;
+  z-index: 999
 }
 .logo {
   /* width: 25%; */
