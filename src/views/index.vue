@@ -18,7 +18,7 @@
       <div class="btns">
         <div class="down" @click="router.push('/download')">下载软件</div>
         <div class="down sub" @click="changeShowVideo">视频介绍</div>
-        <div class="down sub" @click="">了解算法</div>
+        <div class="down sub">了解算法</div>
       </div>
 
       <!-- 介绍图 -->

@@ -7,7 +7,7 @@
     <div class="menu">
       <div class="link" @click="routerTo(0)">下载</div>
       <div class="link" @click="routerTo(1)">功能</div>
-      <div class="link" @click="routerTo(2)">开源文档</div>
+      <!-- <div class="link" @click="routerTo(2)">开源文档</div> -->
       <div class="link" @click="routerTo(3)">联系我</div>
     </div>
   </div>
@@ -26,7 +26,7 @@ const routerTo = (index) => {
       router.push("/download");
       break;
     case 1 :
-      router.push("/index");
+      router.push("/feat");
       break;
     case 2 :
       router.push("/open-source");

@@ -20,6 +20,10 @@ const routers = [
   {
     path: '/connect',
     component: () => import('../views/connect.vue')
+  },
+  {
+    path: '/feat',
+    component: () => import('../views/feat.vue')
   }
 ]
 
