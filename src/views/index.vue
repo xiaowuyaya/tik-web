@@ -167,8 +167,8 @@ const changeShowVideo = () => {
 .show .img {
   margin-left: auto;
   margin-right: auto;
-  height: 80%;
-  height: 80%;
+  height: 70%;
+  width: 70%;
   border: 0.5rem solid #edf2f7;
   border-radius: 0.5rem;
   background-color: #edf2f7;

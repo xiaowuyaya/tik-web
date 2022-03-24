@@ -7,7 +7,7 @@
         <div class="title gap">英雄联盟对局助手</div>
         <div class="desc">抓出队伍里的小内鬼，提升游戏体验！</div>
         <div class="btns">
-          <div class="download">下载 Serendipity</div>
+          <div class="download" @click="toDownload">下载 Serendipity</div>
           <div class="desc">
             <span>最新版本 {{ last_version }}</span>
             <a href="#">更新日志</a>
@@ -25,18 +25,21 @@
 <script setup>
 import { ref } from "vue";
 import { showImg } from "../config/index";
-import Axios from "axios";
-import YAML from "yaml";
-import { latestVersion } from "../config/index";
-
+import { post } from "../util/request";
 
 const last_version = ref("");
 
 // 获取版本
-Axios.get(latestVersion).then((res) => {
-  const last_version_config = YAML.parse(res.data);
-  last_version.value = last_version_config.version;
+post("/getNewVersionCode").then((res) => {
+  last_version.value = res.data.data;
 });
+
+// 获取下载地址，并且下载
+const toDownload = () => {
+  post("/getNewVersionUrl").then((res) => {
+    window.open(res.data.data, "_blank"); // 新窗口打开外链接
+  });
+};
 </script>
 <style scoped>
 .download-container {

@@ -1,5 +1,7 @@
 <template>
   <div class="feat-container">
+        <!-- 回到顶部 -->
+    <el-backtop right="20"></el-backtop>
     <div id="write" class="is-node">
       <p>
         <img src="http://qiniu.eiko.ren/serendipity.png" style="zoom: 25%" />

@@ -1,14 +1,27 @@
 <template>
-  <div class="nav-container">
-    <div class="logo" @click="routerTo('index')">
-      <img :src="logoUrl" alt="serendipity-logo" />
-      <div class="title">Serendipity</div>
+  <div class="layout-container">
+    <div class="nav">
+      <div class="logo" @click="routerTo('index')">
+        <img :src="logoUrl" alt="serendipity-logo" />
+        <div class="title">Serendipity</div>
+      </div>
+      <div class="menu">
+        <div class="link" @click="routerTo('index')">首页</div>
+        <div class="link" @click="routerTo(0)">下载</div>
+        <div class="link" @click="routerTo(1)">功能</div>
+        <div class="link" @click="routerTo(4)">常见问题</div>
+        <!-- <div class="link" @click="routerTo(2)">开源文档</div> -->
+        <div class="link" @click="routerTo(3)">联系我</div>
+      </div>
     </div>
-    <div class="menu">
-      <div class="link" @click="routerTo(0)">下载</div>
-      <div class="link" @click="routerTo(1)">功能</div>
-      <!-- <div class="link" @click="routerTo(2)">开源文档</div> -->
-      <div class="link" @click="routerTo(3)">联系我</div>
+    <router-view class="router" />
+    <div class="footer">
+      <el-footer>
+        <div class="text">
+          &copy;{{ new Date().getFullYear() }} 陈宸臣z(eiko.ren) All rights
+          reserved.
+        </div>
+      </el-footer>
     </div>
   </div>
 </template>
@@ -22,27 +35,30 @@ const router = useRouter();
 
 const routerTo = (index) => {
   switch (index) {
-    case 0 :
+    case 0:
       router.push("/download");
       break;
-    case 1 :
+    case 1:
       router.push("/feat");
       break;
-    case 2 :
+    case 2:
       router.push("/open-source");
       break;
-    case 3 :
+    case 3:
       router.push("/connect");
       break;
-    case 'index' :
+    case 4:
+      router.push("/qa");
+      break;
+    case "index":
       router.push("/index");
       break;
   }
-}
+};
 </script>
 
 <style scoped>
-.nav-container {
+.nav {
   width: 100%;
   display: flex;
   flex-direction: row;
@@ -52,14 +68,14 @@ const routerTo = (index) => {
   background-color: #fff;
   position: fixed;
   top: 0px;
-  z-index: 999
+  z-index: 999;
 }
 .logo {
   /* width: 25%; */
   display: flex;
   flex-direction: row;
   align-items: center;
-    cursor: pointer;
+  cursor: pointer;
 }
 
 .logo img {
@@ -98,5 +114,20 @@ const routerTo = (index) => {
 
 .menu .link:hover {
   color: #606266;
+}
+
+.router {
+  margin-top: 100px;
+}
+
+.footer {
+  height: 50px;
+  margin-top: 50px;
+  z-index: 888;
+}
+.footer .text {
+  color: #999;
+  font-size: 12px;
+  text-align: center;
 }
 </style>
