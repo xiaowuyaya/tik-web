@@ -1,5 +1,15 @@
 export const logoUrl = "http://qiniu.eiko.ren/serendipity.png"
-export const showImg = " https://devhubapp.com/static/screenshots/dark/devhub-desktop.jpg"
+export const showImg = {
+  index: "http://qiniu.eiko.ren/serendipity/web/首页.png",
+  gamePanel: "http://qiniu.eiko.ren/serendipity/web/对局面边.png",
+  gamePanel2: "http://qiniu.eiko.ren/serendipity/web/对局面边2.png",
+  func: "http://qiniu.eiko.ren/serendipity/web/功能.png",
+  setting: "http://qiniu.eiko.ren/serendipity/web/发送设置.png",
+  banList: "http://qiniu.eiko.ren/serendipity/web/黑名单.png",
+  banList2: "http://qiniu.eiko.ren/serendipity/web/黑名单2.png",
+  
+  
+}
 export const qa = [
   {
     q:"使用Serendipity是否会造成封号",

@@ -18,7 +18,7 @@
     <div class="footer">
       <el-footer>
         <div class="text">
-          &copy;{{ new Date().getFullYear() }} 陈宸臣z(eiko.ren) All rights
+          &copy;{{ new Date().getFullYear() }} XiaoWuYaYa  (lol-tool.com) All rights
           reserved.
         </div>
       </el-footer>

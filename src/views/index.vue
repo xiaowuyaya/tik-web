@@ -21,10 +21,28 @@
         <div class="down sub" @click="router.push('/feat')">了解算法</div>
       </div>
 
-      <!-- 介绍图 -->
-      <div class="show">
-        <div class="img">
-          <img :src="showImg" alt="展示图" />
+      <div class="intro-container">
+        <h2 class="intro-title">特色功能</h2>
+        <div class="content">
+          <div class="selection">
+            <div class="box">
+              <h4 class="box-title">游戏面板</h4>
+              <p class="box-desc" @click="changeImg(1)">通过算法计算所有人的历史20把对局得分，更好的进行局势观察，加强游戏中的判断。</p>
+            </div>
+            <div class="box ">
+              <h4 class="box-title">功能</h4>
+              <p class="box-desc" @click="changeImg(2)">功能选项中包含很多特色应用，比如自动接收对局，自动秒选等</p>
+            </div>
+            <div class="box ">
+              <h4 class="box-title">黑名单</h4>
+              <p class="box-desc" @click="changeImg(3)">可以通过添加玩家到黑名单，当再次遇到该玩家时会进行提醒。</p>
+            </div>
+          </div>
+          <div class="img-list">
+            <div class="imgs">
+              <img :src="imgShow" alt="" srcset="" />
+            </div>
+          </div>
         </div>
       </div>
 
@@ -43,20 +61,35 @@ import { useRouter } from "vue-router";
 
 const router = useRouter();
 const showVideo = ref(false);
+let imgShow = ref(showImg.gamePanel2)
 
 const changeShowVideo = () => {
   showVideo.value = true;
 };
+
+const changeImg = (index) =>{
+
+if (index == 1){
+  imgShow.value = showImg.gamePanel2
+}
+
+if (index == 2){
+  imgShow.value = showImg.func
+}
+
+if (index == 3){
+  imgShow.value = showImg.banList2
+}
+}
 </script>
 
 <style scoped>
 .index-container {
-
   width: 100%;
 }
 
 .content {
-    height: calc(100vh - 200px); /* 这个200px是header和footer的高度 */
+  height: calc(100vh - 200px); /* 这个200px是header和footer的高度 */
   width: 1200px;
   height: 100%;
   margin-right: auto;
@@ -70,7 +103,7 @@ const changeShowVideo = () => {
   display: flex;
   flex-direction: column;
   text-align: center;
-  margin-bottom: 32px;
+  /* margin-bottom: 32px; */
 }
 
 .content .logo {
@@ -123,22 +156,22 @@ const changeShowVideo = () => {
   display: flex;
   flex-direction: row;
   justify-content: center;
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
 }
 
 .content .btns .down {
-      cursor: pointer;
-    display: inline-block;
-    min-width: 159px;
-    height: 48px;
-    line-height: 48px;
-    margin-top: 56px;
-    margin-right: 24px;
-    padding: 0 16px;
-    text-align: center;
-    font-size: 18px;
-    color: #fff;
- 
+  cursor: pointer;
+  display: inline-block;
+  min-width: 159px;
+  height: 48px;
+  line-height: 48px;
+  margin-top: 24px;
+  margin-right: 24px;
+  padding: 0 16px;
+  text-align: center;
+  font-size: 18px;
+  color: #fff;
+
   border: 1px solid #5191d9;
   /* border-radius: 999px; */
   background-color: #5191d9;
@@ -155,27 +188,85 @@ const changeShowVideo = () => {
   border: 1px solid #5191d9;
 }
 
-.content .btns .sub:hover{
+.content .btns .sub:hover {
   background-color: #78a6df;
   border: 1px solid #78a6df;
-  color: #fff
+  color: #fff;
 }
 .show {
   margin: auto;
 }
 
-.show .img {
-  margin-left: auto;
-  margin-right: auto;
-  height: 70%;
-  width: 70%;
+.img-list .imgs {
+  width: 870px;
   border: 0.5rem solid #edf2f7;
   border-radius: 0.5rem;
   background-color: #edf2f7;
 }
 
-.show .img img {
+.img-list .imgs img {
   width: 100%;
-  border-radius: 0.5rem;
+}
+
+.intro-container {
+  margin-top: 36px;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 16px;
+  line-height: 1.75;
+}
+
+.intro-title {
+  text-align: center;
+  margin-top: 78px;
+  font-weight: 400;
+  color: #262626;
+  font-size: 40px;
+  line-height: 1.35;
+}
+
+.intro-container .content {
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.content > .selection {
+  padding: 10px;
+}
+
+.content > .selection > .box {
+  /* width: 265px; */
+  padding: 10px;
+  border: 1px solid #e8e8e8;
+  border-radius: 8px;
+  padding: 16px 24px;
+  margin: 8px 16px;
+  box-shadow: 0 2px 8px -2px rgb(5 8 82 / 12%);
+  cursor: pointer;
+}
+
+.content > .selection > .box:hover{
+  background-color: #f1f2f3;
+}
+
+.selection > .box > .box-title {
+  color: #262626;
+  font-weight: 400;
+  margin: 10px 16px;
+  font-size: 20px;
+}
+
+.selection > .box > .box-desc {
+  line-height: 26px;
+  font-size: 16px;
+  color: #595959;
+}
+
+.active {
+  border-left-color: rgb(78, 134, 230);
+  border-left-width: 4px;
 }
 </style>

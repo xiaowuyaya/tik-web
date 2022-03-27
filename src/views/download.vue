@@ -17,7 +17,7 @@
 
       <!-- 图片 -->
       <div class="img">
-        <img :src="showImg" alt="展示图" />
+        <img :src="showImg.index" alt="展示图" />
       </div>
     </div>
   </div>
@@ -30,13 +30,13 @@ import { post } from "../util/request";
 const last_version = ref("");
 
 // 获取版本
-post("/getNewVersionCode").then((res) => {
+post("/web/getNewVersionCode").then((res) => {
   last_version.value = res.data.data;
 });
 
 // 获取下载地址，并且下载
 const toDownload = () => {
-  post("/getNewVersionUrl").then((res) => {
+  post("/web/getNewVersionUrl").then((res) => {
     window.open(res.data.data, "_blank"); // 新窗口打开外链接
   });
 };
@@ -51,8 +51,8 @@ const toDownload = () => {
   /* width: 1200px; */
   margin-right: 1rem;
   margin-left: 1rem;
-  padding-right: 2rem;
-  padding-left: 2rem;
+  padding-right: 3rem;
+  padding-left: 5rem;
   display: flex;
   flex-direction: row;
   /* justify-content: center; */
