@@ -78,7 +78,7 @@ if (index == 2){
 }
 
 if (index == 3){
-  imgShow.value = showImg.banList2
+  imgShow.value = showImg.banList
 }
 }
 </script>

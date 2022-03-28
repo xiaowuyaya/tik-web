@@ -18,9 +18,13 @@
     <div class="footer">
       <el-footer>
         <div class="text">
-          &copy;{{ new Date().getFullYear() }} XiaoWuYaYa  (lol-tool.com) All rights
-          reserved.
+          &copy;CopyRight {{ new Date().getFullYear() }}, lol-tool.com XiaoWuYaYa. All Rights Reserved.
+          reserved.  <a class="text" href="http://www.beian.gov.cn/" >
+          闽ICP备2022001163号</a>
+
         </div>
+
+
       </el-footer>
     </div>
   </div>
@@ -130,4 +134,5 @@ const routerTo = (index) => {
   font-size: 12px;
   text-align: center;
 }
+
 </style>
