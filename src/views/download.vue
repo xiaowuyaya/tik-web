@@ -30,14 +30,17 @@ import { post } from "../util/request";
 const last_version = ref("");
 
 // 获取版本
-post("/web/getNewVersionCode").then((res) => {
+post("/web/getLastVersionCode").then((res) => {
   last_version.value = res.data.data;
 });
 
 // 获取下载地址，并且下载
 const toDownload = () => {
-  post("/web/getNewVersionUrl").then((res) => {
+  post("/web/getLastVersionUrl").then((res) => {
     window.open(res.data.data, "_blank"); // 新窗口打开外链接
+  });
+
+  post("/downloadStatistics/add").then((res) => {
   });
 };
 </script>
