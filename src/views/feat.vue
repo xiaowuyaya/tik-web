@@ -2,237 +2,289 @@
   <div class="feat-container">
         <!-- 回到顶部 -->
     <el-backtop right="20"></el-backtop>
-    <div id="write" class="is-node">
-      <p>
-        <img src="http://qiniu.eiko.ren/serendipity.png" style="zoom: 25%" />
-      </p>
-      <blockquote>
-        <p><strong>声明：</strong></p>
+    <div class="typora-export-content">
+      <div id="write" class="">
+<!--        <h1 id="serendipity英雄联盟对局助手-使用介绍">-->
+<!--          <span>Serendipity英雄联盟对局助手 使用介绍</span>-->
+<!--        </h1>-->
         <p>
-          本工具不存在对游戏文件或内存信息进行修改的操作，不存在tp检测的问题。
+          <img
+              src="http://qiniu.eiko.ren/serendipity.png"
+              alt="img"
+              style="zoom: 25%"
+          />
         </p>
-        <p>
-          本工具所有功能均为合法调用拳头公布的<strong
-            >League Client Update API</strong
-          >，完全遵守英雄联盟的用户使用协议。<br />
-        </p>
-      </blockquote>
-      <h2><a name="header-n11" class="md-header-anchor"></a>介绍</h2>
-      <p>
-        通过获取游戏开始时的双方玩家的历史对局数据（也可在英雄选择时队友的历史对局数据），对数据进行<strong>算法分析</strong>，依照算法，对每个人的历史对局数据进行评分。
-      </p>
-      <p>
-        根据评分结果，得出每位玩家的大致游戏水平，在游戏中能做出针对性的判断结果。
-      </p>
-      <p>&nbsp;</p>
-      <h2><a name="header-n18" class="md-header-anchor"></a>功能</h2>
-      <h3><a name="header-n19" class="md-header-anchor"></a>基本</h3>
-      <ul>
-        <li><p>在应用首页显示当前游戏客户端的账号基本信息</p></li>
-        <li>
+        <blockquote>
           <p>
-            当进行英雄选择阶段时，应用会自动跳转到对局面板，展示当前队友的计算信息。
+            <strong><span>声明：</span></strong>
+            <span
+            >本工具不存在对游戏文件或内存信息进行修改的操作，不存在tp检测的问题。
+            </span>
+            <span>本工具所有功能均为合法调用拳头公布的</span
+            ><strong
+          ><a href="https://developer.riotgames.com/docs/lol"
+          ><span>League Client Update API</span></a
+          ></strong
+          ><span>，完全遵守英雄联盟的用户使用协议。</span>
           </p>
-        </li>
-        <li>
           <p>
-            当游戏开始时，应用会重新计算当前对局所有人的信息，一般在游戏开始之后5秒内即可看到结果。
+            <strong
+            ><span
+            >本软件承诺，永久免费，择期开源。开发不易，请多支持。</span
+            ></strong
+            >
           </p>
-        </li>
-        <li>
-          <p>在英雄选择界面时，在聊天框中可以看到关于队友的数据计算结果。</p>
-          <ul>
-            <li>
-              通过按下快捷键<code>PageUp</code>可以在聊天框中发送结果给大家，或是在应用中查看。
-            </li>
-          </ul>
-        </li>
-        <li>
-          <p>在游戏开始时，可以得到对局中所有玩家的计算结果。</p>
-          <ul>
-            <li>
-              当结果计算完成时，应用会自动跳转到对局面板界面，即可切出查看
-            </li>
-            <li>
-              通过按下快捷键<code>PageUp</code>可以在聊天框中发送<strong>友方</strong>的结果
-            </li>
-            <li>
-              通过按下快捷键<code>PageDown</code>可以在聊天框中发送<strong>敌方</strong>的结果
-            </li>
-          </ul>
-        </li>
-      </ul>
-      <h3><a name="header-n50" class="md-header-anchor"></a>发送设置</h3>
-      <blockquote>
-        <p>在<code>发送设置</code>中可以对展示/发送的内容进行自定义设置</p>
-      </blockquote>
-      <h3><a name="header-n54" class="md-header-anchor"></a>黑名单</h3>
-      <blockquote>
+        </blockquote>
+        <p>&nbsp;</p>
+        <h2 id="介绍"><span>介绍</span></h2>
         <p>
-          在<code>黑名单</code>中可以对玩家进行拉黑，
-          当再次遇到黑名单中的成员为队友时，会在聊天框中发送仅自己可见的消息，提醒用户。
+          <span>和大多同类型软件一样，</span
+          ><strong><span>Serendipity英雄联盟对局助手</span></strong
+        ><span>的主要功能是通过</span
+        ><u><span>获取当前对局中所有玩家的历史对局数据</span></u
+        ><span
+        >（默认最近20把游戏对局，包括但不限于，胜负情况，kda，多杀记录以及分均经济情况），</span
+        ><u
+        ><span
+        >对历史对局的数据进行算法分析，依照算法得出每个人的分值。</span
+        ></u
+        >
         </p>
-      </blockquote>
-      <h3><a name="header-n58" class="md-header-anchor"></a>功能</h3>
-      <blockquote>
-        <p>在<code>功能</code>模块中提供以下几个基础功能</p>
-      </blockquote>
-      <ul>
-        <li>自动接受对局</li>
-        <li>自动禁用英雄</li>
-        <li>自动选择英雄</li>
-        <li>一键创建5V5训练模式</li>
-        <li>通过游戏名一件观战玩家（可非好友，需要正在游戏中）</li>
-      </ul>
-      <h2 id="sourceRules"><a name="header-n79" class="md-header-anchor"></a>计分算法规则</h2>
-      <h3><a name="header-n80" class="md-header-anchor"></a>战绩权重</h3>
-      <blockquote><p>最近20局 匹配 单排 组排 大乱斗的战绩</p></blockquote>
-      <ul>
-        <li>最近5小时战绩权重 <strong>80%</strong></li>
-        <li>其他权重 <strong>20%</strong></li>
-      </ul>
-      <h3><a name="header-n91" class="md-header-anchor"></a>计分机制</h3>
-      <ul>
-        <li>
-          <p>一血</p>
-          <ul>
-            <li>击杀 + 10</li>
-            <li>助攻 + 5</li>
-          </ul>
-        </li>
-        <li>
-          <p>多杀</p>
-          <ul>
-            <li>5杀 + 20</li>
-            <li>4杀 + 10</li>
-            <li>3杀 + 5</li>
-          </ul>
-        </li>
-        <li>
-          <p>参团率</p>
-          <ul>
-            <li>第一名 + 10</li>
-            <li>第二名 + 5</li>
-            <li>第四名 - 5</li>
-            <li>第五名 - 10</li>
-          </ul>
-        </li>
-        <li>
-          <p>金钱比(获取金币的排名)</p>
-          <ul>
-            <li>第一名 + 10</li>
-            <li>第二名 + 5</li>
-            <li>第四名并且不是辅助 - 5</li>
-            <li>第五名并且不是辅助 - 10</li>
-          </ul>
-        </li>
-        <li>
-          <p>伤害比(对英雄造成的伤害排名)</p>
-          <ul>
-            <li>第一名 + 10</li>
-            <li>第二名 + 5</li>
-          </ul>
-        </li>
-        <li>
-          <p>金钱转化比排名(金币转换伤害)</p>
-          <ul>
-            <li>第一名 + 10</li>
-            <li>第二名 + 5</li>
-          </ul>
-        </li>
-        <li>
-          <p>视野得分排名</p>
-          <ul>
-            <li>第一名 + 10</li>
-            <li>第二名 + 5</li>
-          </ul>
-        </li>
-        <li>
-          <p>每分钟补兵数</p>
-          <ul>
-            <li>8 + 5</li>
-            <li>9 + 10</li>
-            <li>9 + 20</li>
-          </ul>
-        </li>
-        <li>
-          <p>kda</p>
-          <ul>
-            <li>
-              <p>击杀占比相关</p>
-              <ul>
-                <li>
-                  <p>击杀占比 &gt; 50%</p>
-                  <ul>
-                    <li>击杀 &gt; 5 + 10</li>
-                    <li>击杀 &gt; 10 + 20</li>
-                    <li>击杀 &gt; 15 + 40</li>
-                  </ul>
-                </li>
-                <li>
-                  <p>击杀占比 &gt; 40%</p>
-                  <ul>
-                    <li>击杀 &gt; 5 + 5</li>
-                    <li>击杀 &gt; 10 + 10</li>
-                    <li>击杀 &gt; 15 + 20</li>
-                  </ul>
-                </li>
-              </ul>
-            </li>
-            <li>
-              <p>伤害占比相关</p>
-              <ul>
-                <li>
-                  <p>伤害占比 &gt; 40%</p>
-                  <ul>
-                    <li>击杀 &gt; 5 + 10</li>
-                    <li>击杀 &gt; 10 + 20</li>
-                    <li>击杀 &gt; 15 + 40</li>
-                  </ul>
-                </li>
-                <li>
-                  <p>伤害占比 &gt; 30%</p>
-                  <ul>
-                    <li>击杀 &gt; 5 + 5</li>
-                    <li>击杀 &gt; 10 + 10</li>
-                    <li>击杀 &gt; 15 + 20</li>
-                  </ul>
-                </li>
-              </ul>
-            </li>
-            <li>
-              <p>助攻占比相关</p>
-              <ul>
-                <li>
-                  <p>助攻占比 &gt; 50%</p>
-                  <ul>
-                    <li>助攻 &gt; 5 + 5</li>
-                    <li>助攻 &gt; 10 + 10</li>
-                    <li>助攻 &gt; 15 + 20</li>
-                    <li>助攻 &gt; 18 + 25</li>
-                    <li>助攻 &gt; 20 + 30</li>
-                  </ul>
-                </li>
-                <li>
-                  <p>助攻占比 &gt; 40%</p>
-                  <ul>
-                    <li>助攻 &gt; 5 + 3</li>
-                    <li>助攻 &gt; 10 + 5</li>
-                    <li>助攻 &gt; 15 + 15</li>
-                    <li>助攻 &gt; 20 + 20</li>
-                  </ul>
-                </li>
-              </ul>
-            </li>
-          </ul>
-        </li>
-        <li>
-          <p>微调</p>
-          <ul>
-            <li>总分 + (k+a)/d -2 + (k-d)/5 * 参团率</li>
-          </ul>
-        </li>
-      </ul>
+        <p>
+          <span
+          >根据评分结果，得出每位玩家最近的大致游戏水平，玩家可以通过数据结果在游戏中做出针对性的判断结果。</span
+          >
+        </p>
+        <p>
+          <span
+          >当然也包括其他附加功能，以下对应用中的各个功能进行详细说明。</span
+          >
+        </p>
+        <p>&nbsp;</p>
+        <h2 id="功能-1"><span>功能</span></h2>
+        <blockquote>
+          <p>
+            <span
+            >本程序目前主要划分为7个模块，分别为：首页，对局面板，战绩查询，发送设置，功能，黑名单以及帮助页面。</span
+            >
+          </p>
+          <p>
+            <strong
+            ><span
+            >需要注意的是，如开头声明所示，本程序是通过调用lcuapi进行开发，所以程序中基本上所有功能都需要在游戏客户端先启动的情况下才能正常运行。</span
+            ></strong
+            >
+          </p>
+        </blockquote>
+        <p>&nbsp;</p>
+        <h3 id="首页"><span>首页</span></h3>
+        <p>
+          <span>主要显示当前游戏客户端所登入账号的</span><code>基本信息</code
+        ><span
+        >，包括头像，游戏名，排位情况，当前游戏状态等。如果未登入游戏客户端，则会提示先登入游戏。</span
+        >
+        </p>
+        <ul>
+          <li>
+            <p>
+              <span> 当进行英雄选择阶段时，应用会自动跳转到</span
+              ><code>对局面板</code><span>，展示当前队友的计算信息。 </span>
+            </p>
+          </li>
+          <li>
+            <p>
+              <span>
+                当游戏开始时，应用会重新计算当前对局所有人的信息，一般在游戏开始之后5秒内即可看到结果。
+              </span>
+            </p>
+          </li>
+          <li>
+            <p>
+              <span
+              >在英雄选择界面时，在聊天框中可以看到关于队友的数据计算结果。</span
+              >
+            </p>
+            <ul>
+              <li>
+                <span> 通过按下快捷键</span><code>PageUp</code
+              ><span>可以在聊天框中发送结果给大家，或是在应用中查看。 </span>
+              </li>
+            </ul>
+          </li>
+          <li>
+            <p><span>在游戏开始时，可以得到对局中所有玩家的计算结果。</span></p>
+            <ul>
+              <li>
+                <span>
+                  当结果计算完成时，应用会自动跳转到对局面板界面，即可切出查看
+                </span>
+              </li>
+              <li>
+                <span> 通过按下快捷键</span><code>PageUp</code
+              ><span>可以在聊天框中发送</span
+              ><strong><span>友方</span></strong
+              ><span>的结果 </span>
+              </li>
+              <li>
+                <span> 通过按下快捷键</span><code>PageDown</code
+              ><span>可以在聊天框中发送</span
+              ><strong><span>敌方</span></strong
+              ><span>的结果 </span>
+              </li>
+            </ul>
+          </li>
+        </ul>
+        <p>&nbsp;</p>
+        <p>
+          <img
+              src="http://qiniu.lol-tool.com/imgs/start_notice.png"
+              referrerpolicy="no-referrer"
+          />
+        </p>
+        <p>
+          <img
+              src="http://qiniu.lol-tool.com/imgs/home.png"
+              referrerpolicy="no-referrer"
+          />
+        </p>
+        <p>&nbsp;</p>
+        <h3 id="对局面板"><span>对局面板</span></h3>
+        <p>
+          <span
+          >对局面板模块主要显示当前对局中玩家的信息情况，是本程序的主要内容。显示的内容为，称号、评分、游戏名、kd信息、历史对局其中称号可以在</span
+          ><code>发送设置</code
+        ><span
+        >中进行修改。历史对局中，着重色字体显示的是胜场，白色为负场。</span
+        >
+        </p>
+        <p>
+          <span>该模块在</span><code>选择英雄阶段</code
+        ><span>显示当前队友的信息，在</span><code>游戏中</code
+        ><span>可以看到所有玩家的信息。</span>
+        </p>
+        <p>
+          <span
+          >当对局面板有显示内容时，即可通过快捷键在聊天框中发送当前对局内容。</span
+          >
+        <p>&nbsp;</p>
+          <img
+              src="http://qiniu.lol-tool.com/imgs/game_panel_in_progress.png"
+              referrerpolicy="no-referrer"
+          />
+        </p>
+        <p>
+          <img
+              src="http://qiniu.lol-tool.com/imgs/game_panel_select_champion.png"
+              referrerpolicy="no-referrer"
+          />
+        </p>
+        <p>&nbsp;</p>
+        <h3 id="战绩查询"><span>战绩查询</span></h3>
+        <p>
+          <span
+          >由于WeGame客户端近期推出的隐私功能，导致大多玩家对自己的账号设置了不可搜索的权限，但是抵不住大多玩家好奇的心理，所以程序中附带了战绩搜索的功能。该模块通过客户端搜索可以获取最近20把的战绩情况，无视WeGame的权限设置。</span
+          >
+        </p>
+        <p>
+          <span>为了方便搜索，可以在</span><code>对局面板</code
+        ><span>模块中通过</span><strong><span>点击游戏名</span></strong
+        ><span
+        >快速搜索该玩家。当然在搜索结果中也可以通过同样的方式进行操作。</span
+        >
+        <p>&nbsp;</p>
+          <img
+              src="http://qiniu.lol-tool.com/imgs/history.png"
+              referrerpolicy="no-referrer"
+          />
+        </p>
+        <h3 id="发送设置"><span>发送设置</span></h3>
+        <p>
+          <span>发送设置中目前主要设置的是在</span><code>对局面板</code
+        ><span>中以及快捷键发送显示的称号，</span>
+          <img
+              src="http://qiniu.lol-tool.com/imgs/send_setting.png"
+              referrerpolicy="no-referrer"
+          />
+        </p>
+        <h3 id="功能-2"><span>功能</span></h3>
+        <p><span>当前功能模块包含以下内容。</span></p>
+        <ul>
+          <li><span>自动接受对局 （建议开启，十分好用！）</span></li>
+          <li><span>自动禁用英雄</span></li>
+          <li><span>自动选择英雄</span></li>
+          <li><span>更改游戏段位（好友可见）</span></li>
+          <li><span>更改游戏状态（在线，离线，离开，手机在线）</span></li>
+          <li><span>一键创建5V5训练模式</span></li>
+          <li>
+            <span>通过游戏名一件观战玩家（可非好友，需要正在游戏中）</span>
+            <p>&nbsp;</p>
+            <img
+                src="http://qiniu.lol-tool.com/imgs/func.png"
+                referrerpolicy="no-referrer"
+            />
+          </li>
+        </ul>
+        <h3 id="黑名单"><span>黑名单</span></h3>
+        <blockquote>
+          <p>
+            <span>该模块类似于早年</span
+            ><a
+              href="https://baike.baidu.com/item/%E9%BB%91%E5%BA%97%E7%99%BE%E5%9C%B0/23638171?fr=aladdin"
+          ><span>黑店百地</span></a
+          ><span>的</span><strong><span>死亡笔记</span></strong
+          ><span>。可以记录历史对局中遇到的消极玩家。</span>
+          </p>
+        </blockquote>
+        <p>
+          <span>可以通过</span><code>对局面板</code
+        ><span
+        >中点击英雄头像的方式，将该玩家添加到黑名单，或者是在黑名单模块中，通过输入游戏名的方式添加黑名单。</span
+        >
+        </p>
+        <p>
+          <span
+          >当再次遇到黑名单中的玩家为队友时，会在聊天界面发送消息进行提示。</span
+          >
+        </p>
+        <p>
+          <span
+          >发送的提示可以选择仅自己可见（黄色字体），或队友可见（白色字体）。</span
+          >
+        <p>&nbsp;</p>
+          <img
+              src="http://qiniu.lol-tool.com/imgs/black_list.png"
+              referrerpolicy="no-referrer"
+          />
+        </p>
+        <p>
+          <img
+              src="http://qiniu.lol-tool.com/imgs/go_black.png"
+              referrerpolicy="no-referrer"
+          />
+        </p>
+        <p>
+          <img
+              src="http://qiniu.lol-tool.com/imgs/black_notice.png"
+              referrerpolicy="no-referrer"
+          />
+        </p>
+        <h3 id="帮助"><span>帮助</span></h3>
+        <p>
+          <span
+          >跳转至官网，在官网可以找到当前版本常见问题以及解答。在最下方可以通过留言反馈的方式告知开发者。</span
+          >
+        </p>
+        <p>&nbsp;</p>
+        <h2 id="终"><span>终</span></h2>
+        <p>
+          <span
+          >以上为Serendipity英雄联盟对局助手的介绍内容，如有疑问可以通过官网的联系方式与我联系。</span
+          >
+        </p>
+        <p>
+          <span>免费开发维护不易，如果喜欢，请和朋友一起推广，支持作者。</span>
+        </p>
+      </div>
     </div>
   </div>
 </template>
@@ -264,17 +316,17 @@ a:hover {
   background: rgb(181, 214, 252);
   text-shadow: none;
 }
-#write {
-  margin: 0px auto;
-  height: auto;
-  width: inherit;
-  word-break: normal;
-  word-wrap: break-word;
-  position: relative;
-  padding-bottom: 70px;
-  white-space: pre-wrap;
-  overflow-x: visible;
-}
+/*#write {*/
+/*  margin: 0px auto;*/
+/*  height: auto;*/
+/*  width: inherit;*/
+/*  word-break: normal;*/
+/*  word-wrap: break-word;*/
+/*  position: relative;*/
+/*  padding-bottom: 70px;*/
+/*  white-space: pre-wrap;*/
+/*  overflow-x: visible;*/
+/*}*/
 .for-image #write {
   padding-left: 8px;
   padding-right: 8px;
@@ -856,7 +908,7 @@ body {
   line-height: 1.6;
 }
 #write {
-  max-width: 860px;
+  max-width: 960px;
   margin: 0px auto;
   padding: 20px 30px 100px;
 }

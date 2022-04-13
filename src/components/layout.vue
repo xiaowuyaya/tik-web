@@ -67,12 +67,13 @@ const routerTo = (index) => {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
-  padding: 0.5rem 0;
+  padding: 0.8rem 0;
   border-bottom: 1px solid #edf2f7;
   background-color: #fff;
   position: fixed;
   top: 0px;
   z-index: 999;
+  box-shadow: 0 2px 4px 0 rgb(0 0 0 / 5%);
 }
 .logo {
   /* width: 25%; */

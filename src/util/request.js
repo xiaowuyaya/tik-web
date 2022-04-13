@@ -1,6 +1,6 @@
 import Axios from "axios";
 
-const serverUrl = "http://localhost:7001"
+const serverUrl = "http://121.4.113.152:7001"
 
 export function post(path, data){
   return Axios.post(

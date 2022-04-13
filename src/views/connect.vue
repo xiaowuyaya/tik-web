@@ -6,6 +6,7 @@
       <h2 class="desc">📮 邮箱：liaolingwei605@163.com</h2>
       <h2 class="desc">💬 微信：ek1_life (添加请说明来意)</h2>
       <h2 class="desc">🐧 QQ：2209087068 (添加请说明来意)</h2>
+      <h2 class="desc">📺 bilibili：<a href="https://space.bilibili.com/30368302">ek1_3zz</a></h2>
     </div>
   </div>
 </template>
@@ -56,5 +57,18 @@ import { logoUrl } from "../config/index";
   font-weight: 600;
   color: #36587c;
   text-align: left;
+}
+
+a {
+  color: #096dd9;
+  text-decoration: none;
+  background-color: rgba(0, 0, 0, 0);
+  outline: none;
+  cursor: pointer;
+  -webkit-transition: color 0.3s;
+  transition: color 0.3s;
+  -webkit-text-decoration-skip: objects;
+  margin-left: 8px;
+  /*font-size: 14px !important;*/
 }
 </style>

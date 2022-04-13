@@ -13,11 +13,13 @@ console.log(">>> Serendipity 英雄联盟对局助手 <<<");
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: #2c3e50;
+  /*background-color: #fafafa;*/
 }
 
 html,
 body,
 #app {
   height: 100%;
+
 }
 </style>

@@ -1,12 +1,13 @@
 export const logoUrl = "http://qiniu.eiko.ren/serendipity.png"
 export const showImg = {
-  index: "http://qiniu.eiko.ren/serendipity/web/首页.png",
-  gamePanel: "http://qiniu.eiko.ren/serendipity/web/对局面边.png",
-  gamePanel2: "http://qiniu.eiko.ren/serendipity/web/对局面边2.png",
-  func: "http://qiniu.eiko.ren/serendipity/web/功能.png",
-  setting: "http://qiniu.eiko.ren/serendipity/web/发送设置.png",
-  banList: "http://qiniu.eiko.ren/serendipity/web/黑名单.png",
-  banList2: "http://qiniu.eiko.ren/serendipity/web/黑名单2.png",
+  index: "http://qiniu.lol-tool.com/imgs/home.png",
+  gamePanel: "http://qiniu.lol-tool.com/imgs/game_panel_in_progress.png",
+  gamePanel2: "http://qiniu.lol-tool.com/imgs/game_panel_select_champion.png",
+  history: "http://qiniu.lol-tool.com/imgs/history.png",
+  func: "http://qiniu.lol-tool.com/imgs/func.png",
+  send_setting: "http://qiniu.lol-tool.com/imgs/send_setting.png",
+  black_list: "http://qiniu.lol-tool.com/imgs/black_list.png",
+  black_notice: "http://qiniu.lol-tool.com/imgs/black_notice.png",
   
   
 }
