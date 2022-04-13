@@ -12,20 +12,21 @@
             <span>最新版本 {{ last_version }}</span>
             <a href="#">更新日志</a>
           </div>
+          <div class="ad">交流Q群：914241626</div>
         </div>
       </div>
 
       <!-- 图片 -->
       <div class="img">
-        <img :src="showImg.index" alt="展示图" />
+        <img :src="showImg.index" alt="展示图"/>
       </div>
     </div>
   </div>
 </template>
 <script setup>
-import { ref } from "vue";
-import { showImg } from "../config/index";
-import { post } from "../util/request";
+import {ref} from "vue";
+import {showImg} from "../config/index";
+import {post} from "../util/request";
 
 const last_version = ref("");
 
@@ -85,6 +86,13 @@ const toDownload = () => {
   font-weight: 400;
 }
 
+.info .ad {
+  font-size: 14px;
+  color: #585858;
+  line-height: 32px;
+  font-weight: 400;
+}
+
 .btns {
   margin-left: 0rem;
 }
@@ -95,8 +103,8 @@ const toDownload = () => {
   min-width: 159px;
   height: 48px;
   line-height: 48px;
-  margin-top: 56px;
-  margin-right: 24px;
+  margin-top: 38px;
+  /*margin-right: 24px;*/
   padding: 0 16px;
   background: #5191d9;
   border-radius: 4px;
