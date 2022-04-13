@@ -7,6 +7,14 @@
       <h2 class="desc">💬 微信：ek1_life (添加请说明来意)</h2>
       <h2 class="desc">🐧 QQ：2209087068 (添加请说明来意)</h2>
       <h2 class="desc">📺 bilibili：<a href="https://space.bilibili.com/30368302">ek1_3zz</a></h2>
+      <div class="introduce">
+        <h3 align="center">个人开发，承接项目外包，代写</h3>
+        <p>技术栈如下：</p>
+        <p>前端：三件套、Vue、jQuery</p>
+        <p>后端：Java、Node.js、Python</p>
+        <p>数据库：MySQL, Oracle, MongoDB, Redis</p>
+        <p>框架：Spring MVC, SpringBoot, SpringCloud, electron, egg.js, koa.js, FastApi</p>
+      </div>
     </div>
   </div>
 </template>
@@ -53,8 +61,8 @@ import { logoUrl } from "../config/index";
   width: 100%;
   margin: 0 0 0.5rem 1rem;
   line-height: 1.625;
-  font-size: 1.25rem;
-  font-weight: 600;
+  font-size: 1.1rem;
+  font-weight: 500;
   color: #36587c;
   text-align: left;
 }
@@ -70,5 +78,13 @@ a {
   -webkit-text-decoration-skip: objects;
   margin-left: 8px;
   /*font-size: 14px !important;*/
+}
+
+.introduce{
+  border: 1px solid #e8e8e8;
+  border-radius: 8px;
+  padding: 14px 20px;
+  margin: 3rem 16px;
+  box-shadow: 0 2px 8px -2px rgb(5 8 82 / 12%);
 }
 </style>

@@ -243,7 +243,7 @@ const changeImg = (index) => {
 .content > .selection > .box {
   width: 230px;
   /*padding: 10px;*/
-  text-align: ce;
+  text-align: center;
   border: 1px solid #e8e8e8;
   border-radius: 8px;
   padding: 14px 20px;

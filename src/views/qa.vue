@@ -143,7 +143,7 @@ const feedBackGo = () => {
   margin: 0 0 0.5rem 1rem;
   line-height: 1.625;
   font-size: 1rem;
-  font-weight: 600;
+  font-weight: 500;
   color: #36587c;
   text-align: left;
 }

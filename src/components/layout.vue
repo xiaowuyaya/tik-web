@@ -67,7 +67,7 @@ const routerTo = (index) => {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
-  padding: 0.8rem 0;
+  padding: 0.5rem 0;
   border-bottom: 1px solid #edf2f7;
   background-color: #fff;
   position: fixed;
@@ -110,7 +110,7 @@ const routerTo = (index) => {
   white-space: nowrap;
   text-align: center;
   color: #36587c;
-  font-weight: 600;
+  font-weight: 500;
   border-width: 1px;
   border-color: transparent;
   background-color: transparent;
