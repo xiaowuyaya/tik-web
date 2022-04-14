@@ -62,7 +62,7 @@ const feedBackGo = () => {
     content: feedBackForm.value.content,
   }
 
-  post("/feedback/add",data).then(res => {
+  post("/feedBack/add",data).then(res => {
     if(res.data.code == 200){
       ElMessage({
         message: "提交反馈成功，请耐心等待回复",

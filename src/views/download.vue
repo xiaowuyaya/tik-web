@@ -38,8 +38,11 @@ post("/web/getLastVersionCode").then((res) => {
 // 获取下载地址，并且下载
 const toDownload = () => {
   post("/web/getLastVersionUrl").then((res) => {
+    
     window.open(res.data.data, "_blank"); // 新窗口打开外链接
+    post("/downloadStatistics/add").then((res)=>{})
   });
+  
 };
 </script>
 <style scoped>
