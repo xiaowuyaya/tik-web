@@ -63,7 +63,7 @@ const feedBackGo = () => {
   }
 
   post("/feedBack/add",data).then(res => {
-    if(res.data.code == 200){
+    if(res.data.code == 20000){
       ElMessage({
         message: "提交反馈成功，请耐心等待回复",
         type:"success"

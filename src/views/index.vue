@@ -16,7 +16,8 @@
       <div class="btns">
         <div class="down" @click="router.push('/download')">下载软件</div>
         <div class="down sub" @click="changeShowVideo">视频介绍</div>
-        <div class="down sub" @click="router.push('/feat')">了解算法</div>
+        <!-- <div class="down sub" @click="router.push('/feat')">了解算法</div> -->
+        <div class="down warn-sub" @click="router.push('/blacklist')">诸神榜</div>
       </div>
 
       <div class="intro-container">
@@ -196,6 +197,18 @@ const changeImg = (index) => {
   color: #fff;
 }
 
+.content .btns .warn-sub{
+  color: #F56C6C;
+    background-color: #fff;
+    border: 1px solid #F56C6C;
+}
+
+.content .btns .warn-sub:hover{
+  color: #fff;
+    background-color: #f89898;
+    border: 1px solid #f89898;
+}
+
 .show {
   margin: auto;
 }
@@ -278,4 +291,6 @@ const changeImg = (index) => {
   border-left-color: rgb(78, 134, 230);
   border-left-width: 4px;
 }
+
+
 </style>

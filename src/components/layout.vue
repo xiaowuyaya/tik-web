@@ -10,6 +10,7 @@
         <div class="link" @click="routerTo(0)">下载</div>
         <div class="link" @click="routerTo(1)">功能</div>
         <div class="link" @click="routerTo(4)">常见问题</div>
+        <div class="link" @click="routerTo(5)">诸神板</div>
         <!-- <div class="link" @click="routerTo(2)">开源文档</div> -->
         <div class="link" @click="routerTo(3)">联系我</div>
       </div>
@@ -21,10 +22,7 @@
           &copy;CopyRight {{ new Date().getFullYear() }}, lol-tool.com XiaoWuYaYa. All Rights Reserved.
           reserved.  <a class="text" href="http://www.beian.gov.cn/" >
           闽ICP备2022001163号</a>
-
         </div>
-
-
       </el-footer>
     </div>
   </div>
@@ -53,6 +51,9 @@ const routerTo = (index) => {
       break;
     case 4:
       router.push("/qa");
+      break;
+       case 5:
+      router.push("/blacklist");
       break;
     case "index":
       router.push("/index");

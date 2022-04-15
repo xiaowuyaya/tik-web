@@ -10,7 +10,7 @@
           <div class="download" @click="toDownload">下载 Serendipity</div>
           <div class="desc">
             <span>最新版本 {{ last_version }}</span>
-            <a href="#">更新日志</a>
+            <a href="#" @click="router.push('/versionLog')">更新日志</a>
           </div>
           <div class="ad">交流Q群：914241626</div>
         </div>
@@ -27,8 +27,10 @@
 import {ref} from "vue";
 import {showImg} from "../config/index";
 import {post} from "../util/request";
+import { useRouter } from "vue-router";
 
 const last_version = ref("");
+const router = useRouter();
 
 // 获取版本
 post("/web/getLastVersionCode").then((res) => {
