@@ -10,24 +10,27 @@
           <div class="download" @click="toDownload">下载 Serendipity</div>
           <div class="desc">
             <span>最新版本 {{ last_version }}</span>
-            <a href="#">更新日志</a>
+            <a href="#" @click="router.push('/versionLog')">更新日志</a>
           </div>
+          <div class="ad">交流Q群：914241626</div>
         </div>
       </div>
 
       <!-- 图片 -->
       <div class="img">
-        <img :src="showImg.index" alt="展示图" />
+        <img :src="showImg.index" alt="展示图"/>
       </div>
     </div>
   </div>
 </template>
 <script setup>
-import { ref } from "vue";
-import { showImg } from "../config/index";
-import { post } from "../util/request";
+import {ref} from "vue";
+import {showImg} from "../config/index";
+import {post} from "../util/request";
+import { useRouter } from "vue-router";
 
 const last_version = ref("");
+const router = useRouter();
 
 // 获取版本
 post("/web/getLastVersionCode").then((res) => {
@@ -37,11 +40,11 @@ post("/web/getLastVersionCode").then((res) => {
 // 获取下载地址，并且下载
 const toDownload = () => {
   post("/web/getLastVersionUrl").then((res) => {
+
     window.open(res.data.data, "_blank"); // 新窗口打开外链接
+    post("/downloadStatistics/add").then((res)=>{})
   });
 
-  post("/downloadStatistics/add").then((res) => {
-  });
 };
 </script>
 <style scoped>
@@ -88,6 +91,13 @@ const toDownload = () => {
   font-weight: 400;
 }
 
+.info .ad {
+  font-size: 14px;
+  color: #585858;
+  line-height: 32px;
+  font-weight: 400;
+}
+
 .btns {
   margin-left: 0rem;
 }
@@ -98,8 +108,8 @@ const toDownload = () => {
   min-width: 159px;
   height: 48px;
   line-height: 48px;
-  margin-top: 56px;
-  margin-right: 24px;
+  margin-top: 38px;
+  /*margin-right: 24px;*/
   padding: 0 16px;
   background: #5191d9;
   border-radius: 4px;

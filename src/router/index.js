@@ -30,6 +30,17 @@ const routers = [
     name: 'Qa',
     path: '/qa',
     component: () => import('../views/qa.vue')
+  },
+  {
+    name:'VersionLog',
+    path:"/versionLog",
+    component: () => import('../views/version_log.vue')
+  }
+  ,
+  {
+    name:'Blacklist',
+    path:"/blacklist",
+    component: () => import('../views/blacklist.vue')
   }
 ]
 

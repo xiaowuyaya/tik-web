@@ -62,8 +62,8 @@ const feedBackGo = () => {
     content: feedBackForm.value.content,
   }
 
-  post("/feedback/add",data).then(res => {
-    if(res.data.code == 200){
+  post("/feedBack/add",data).then(res => {
+    if(res.data.code == 20000){
       ElMessage({
         message: "提交反馈成功，请耐心等待回复",
         type:"success"
@@ -143,7 +143,7 @@ const feedBackGo = () => {
   margin: 0 0 0.5rem 1rem;
   line-height: 1.625;
   font-size: 1rem;
-  font-weight: 600;
+  font-weight: 500;
   color: #36587c;
   text-align: left;
 }
