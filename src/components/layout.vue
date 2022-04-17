@@ -2,25 +2,26 @@
   <div class="layout-container">
     <div class="nav">
       <div class="logo" @click="routerTo('index')">
-        <img :src="logoUrl" alt="serendipity-logo" />
+        <img :src="logoUrl" alt="serendipity-logo"/>
         <div class="title">Serendipity</div>
       </div>
       <div class="menu">
         <div class="link" @click="routerTo('index')">首页</div>
         <div class="link" @click="routerTo(0)">下载</div>
         <div class="link" @click="routerTo(1)">功能</div>
+        <div class="link warn-font" @click="routerTo(6)">更新日志</div>
         <div class="link" @click="routerTo(4)">常见问题</div>
-        <div class="link" @click="routerTo(5)">诸神板</div>
+        <div class="link warn-font" @click="routerTo(5)">诸神板</div>
         <!-- <div class="link" @click="routerTo(2)">开源文档</div> -->
         <div class="link" @click="routerTo(3)">联系我</div>
       </div>
     </div>
-    <router-view class="router" />
+    <router-view class="router"/>
     <div class="footer">
       <el-footer>
         <div class="text">
           &copy;CopyRight {{ new Date().getFullYear() }}, lol-tool.com XiaoWuYaYa. All Rights Reserved.
-          reserved.  <a class="text" href="http://www.beian.gov.cn/" >
+          reserved. <a class="text" href="http://www.beian.gov.cn/">
           闽ICP备2022001163号</a>
         </div>
       </el-footer>
@@ -29,9 +30,9 @@
 </template>
 
 <script setup>
-import { ref } from "vue";
-import { useRouter } from "vue-router";
-import { logoUrl } from "../config/index";
+import {ref} from "vue";
+import {useRouter} from "vue-router";
+import {logoUrl} from "../config/index";
 
 const router = useRouter();
 
@@ -52,8 +53,11 @@ const routerTo = (index) => {
     case 4:
       router.push("/qa");
       break;
-       case 5:
+    case 5:
       router.push("/blacklist");
+      break;
+    case 6:
+      router.push("/versionLog");
       break;
     case "index":
       router.push("/index");
@@ -76,6 +80,7 @@ const routerTo = (index) => {
   z-index: 999;
   box-shadow: 0 2px 4px 0 rgb(0 0 0 / 5%);
 }
+
 .logo {
   /* width: 25%; */
   display: flex;
@@ -131,10 +136,12 @@ const routerTo = (index) => {
   margin-top: 50px;
   z-index: 888;
 }
+
 .footer .text {
   color: #999;
   font-size: 12px;
   text-align: center;
 }
+
 
 </style>

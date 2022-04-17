@@ -204,7 +204,7 @@ const changeImg = (index) => {
 }
 
 .content .btns .warn-sub:hover{
-  color: #fff;
+    color: #fff;
     background-color: #f89898;
     border: 1px solid #f89898;
 }

@@ -4,6 +4,28 @@
       <img class="logo" :src="logoUrl" alt="serendipity-logo" />
       <h1 class="text title">Serendipity 更新日志</h1>
       <div class="row">
+        <div class="question">VERSION: 1.4.1802 (最新)</div>
+        <p class="answer">1. 修复了游戏内发送的问题😆！！！</p>
+        <p class="answer">2. 修复了大区显示错误的问题</p>
+        <p class="answer">3. 【对局面板】去除算法积分显示，更改为显示单双排段位</p>
+        <p class="answer">4. 【急速秒选】添加是否自动确认选项</p>
+        <p class="answer">5. 底部显示版本号，点击可查看版本更新日志</p>
+        <p class="answer">6. 关于 5v5训练模式的问题主要是因为马服对这一块做了屏蔽，暂时还没有解决方式，目前只能通过添加假人的方式进行5v5了</p>
+        <p class="answer"><strong>待添加或修复：</strong></p>
+        <p class="answer">1. 自动禁用英雄的功能，存在问题</p>
+        <p class="answer">2. 战绩查询显示的模式需要具体到：单双，灵活等</p>
+        <p class="answer">3. 算法存在一定问题，需要优化。（重要）</p>
+        <p class="answer">4. 关于win7用户无法使用的问题，暂时没有定位到</p>
+        <p class="answer">5. 添加自定义发送快捷键功能</p>
+        <p class="answer">6. 部分用户反应在游戏开启时，仍然没有检测到游戏的问题</p>
+        <p class="answer"><strong>自从上线以来收到了很多朋友的反馈与支持，有很多新奇的想法，这边做个小预告：</strong></p>
+        <p class="answer">1. 更换新版本ui界面风格，主色调为白色，当然灰色调也会保存，用户可自行切换。</p>
+        <p class="answer">2. 由于目前统计的数据是所有模式的综合，下个大版本更新将更改为各个模式分开统计</p>
+        <p class="answer">3. 添加荣誉时刻，类似于wegame的荣誉截图，自动分享到官网，综合展示</p>
+        <p class="answer">3. 接入opgg api，在选择英雄时可以直接使用opgg提供的符文以及出装。</p>
+        <p class="answer" style="color: #F56C6C">这是一个庞大的工程，感谢大家的支持。</p>
+      </div>
+      <div class="row">
         <div class="question">VERSION: 1.4.1501</div>
         <div class="answer">1.添加了黑名单云同步功能 <br>2.修复了样式显示问题 <br>3.修复已知bug</div>
       </div>
