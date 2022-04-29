@@ -4,13 +4,17 @@
     <div class="content">
       <!-- 介绍 -->
       <div class="text">
-        <img class="logo" :src="logoUrl" alt="serendipity-logo"/>
+        <img class="logo" :src="logoUrl" alt="serendipity-logo" />
         <h1 class="title">Serendipity 英雄联盟对局助手</h1>
-        <h2 class="slogan">抓出队伍里的小内鬼，提升游戏体验！</h2>
-        <h2 class="desc">
-          通过获取当前对局中所有玩家的历史20场对局数据，对每个玩家的历史对局数据进行算法评分。根据评分结果，得出每位玩家的大致游戏水平，在游戏中能做出针对性的判断结果。
-        </h2>
-        <h2 class="desc">功能包括：马种评选，信息一键发送，发送自定义设置，自动接收对局，匹配秒选，排位自动禁选，段位伪造，状态修改，一键opgg天赋</h2>
+        <h2 class="slogan">这可能是你用过最体验最好的英雄联盟游戏工具</h2>
+        <div class="desc">
+          <p>
+            马种评选：通过获取当前对局中所有玩家的历史20场对局数据，对每个玩家的历史对局数据进行算法评分。根据评分结果，得出每位玩家的大致游戏水平，在游戏中能做出针对性的判断结果。
+          </p>
+          <p>
+            额外功能：自动接收对局，游戏内外一键发送，排位自动禁选，段位伪造，状态修改，一键观战，一键配置OPGG天赋推荐。
+          </p>
+        </div>
       </div>
 
       <!-- 按钮 -->
@@ -18,10 +22,12 @@
         <div class="down" @click="router.push('/download')">下载软件</div>
         <div class="down sub" @click="changeShowVideo">视频介绍</div>
         <!-- <div class="down sub" @click="router.push('/feat')">了解算法</div> -->
-        <div class="down warn-sub" @click="router.push('/blacklist')">诸神榜</div>
+        <div class="down warn-sub" @click="router.push('/blacklist')">
+          诸神榜
+        </div>
       </div>
 
-      <div class="intro-container">
+      <!-- <div class="intro-container">
         <h2 class="intro-title">特色功能</h2>
         <div class="content">
           <div class="selection">
@@ -31,20 +37,20 @@
             <div class="box" @click="changeImg(2)">
               <h4 class="box-title">特色功能</h4>
             </div>
-            <div class="box " @click="changeImg(3)">
+            <div class="box" @click="changeImg(3)">
               <h4 class="box-title">战绩查询</h4>
             </div>
-            <div class="box " @click="changeImg(4)">
+            <div class="box" @click="changeImg(4)">
               <h4 class="box-title">黑名单</h4>
             </div>
           </div>
           <div class="img-list">
             <div class="imgs">
-              <img :src="imgShow" alt="" srcset=""/>
+              <img :src="imgShow" alt="" srcset="" />
             </div>
           </div>
         </div>
-      </div>
+      </div> -->
 
       <!-- 视频介绍弹窗 -->
       <el-dialog v-model="showVideo" title="视频介绍" width="70%"></el-dialog>
@@ -55,13 +61,13 @@
 </template>
 
 <script setup>
-import {ref} from "vue";
-import {logoUrl, showImg} from "../config/index";
-import {useRouter} from "vue-router";
+import { ref } from "vue";
+import { logoUrl, showImg } from "../config/index";
+import { useRouter } from "vue-router";
 
 const router = useRouter();
 const showVideo = ref(false);
-let imgShow = ref(showImg.gamePanel)
+let imgShow = ref(showImg.gamePanel);
 
 const changeShowVideo = () => {
   showVideo.value = true;
@@ -69,141 +75,131 @@ const changeShowVideo = () => {
 
 const changeImg = (index) => {
   if (index == 1) {
-    imgShow.value = showImg.gamePanel
+    imgShow.value = showImg.gamePanel;
   }
   if (index == 2) {
-    imgShow.value = showImg.func
+    imgShow.value = showImg.func;
   }
   if (index == 3) {
-    imgShow.value = showImg.history
+    imgShow.value = showImg.history;
   }
   if (index == 4) {
-    imgShow.value = showImg.black_list
+    imgShow.value = showImg.black_list;
   }
-}
+};
 </script>
 
-<style scoped>
+<style lang="less" scoped>
 .index-container {
   width: 100%;
-}
 
-.content {
-  height: calc(100vh - 200px); /* 这个200px是header和footer的高度 */
-  width: 1400px;
-  height: 100%;
-  margin-right: auto;
-  margin-left: auto;
-  padding-right: 2rem;
-  padding-left: 2rem;
-}
+  .content {
+    height: calc(100vh - 200px); /* 这个200px是header和footer的高度 */
+    width: 100%;
+    // height: 100%;
+    margin-right: auto;
+    margin-left: auto;
 
-.content .text {
-  padding: 0 15%;
-  display: flex;
-  flex-direction: column;
-  text-align: center;
-  background: url(//gw.alipayobjects.com/mdn/rms_ee84bf/afts/img/A*uz-1TKW-ni8AAAAAAAAAAAAAARQnAQ) 50%/contain no-repeat;
-}
+    .text {
+      padding: 0 2.5rem;
+      display: flex;
+      flex-direction: column;
+      text-align: center;
+      background: url(//gw.alipayobjects.com/mdn/rms_ee84bf/afts/img/A*uz-1TKW-ni8AAAAAAAAAAAAAARQnAQ)
+        100% / contain no-repeat;
 
-.content .logo {
-  width: 6rem;
-  height: 6rem;
-  margin: auto;
-  margin-bottom: 1.5rem;
-  border-radius: 9999px;
-  border: 2px solid #edf2f7;
-  background-color: #edf2f7;
-  display: block;
-  vertical-align: middle;
-}
+      .logo {
+        width: 8rem;
+        height: 8rem;
+        margin: auto;
+        margin-bottom: 1.5rem;
+        border-radius: 9999px;
+        border: 2px solid #edf2f7;
+        background-color: #edf2f7;
+        display: block;
+        vertical-align: middle;
+      }
+      .title {
+        font-family: "YouSheBiaoTiHei";
+        font-size: 4rem;
+        font-weight: 400;
+        margin-bottom: 0rem;
+        line-height: 1.1;
+        color: #1f3247;
+        text-align: center;
+      }
 
-.content .title {
-  font-size: 3.25rem;
-  margin-bottom: 1.5rem;
-  line-height: 1.1;
-  font-weight: 900;
-  color: #1f3247;
-  text-align: center;
-  margin-block-start: 1em;
-  margin-block-end: 1em;
-}
+      .slogan {
+        text-shadow: rgba(143, 143, 189, 0.2) 1px 1px 5px;
+        color: #5191d9;
+        text-transform: uppercase;
+        text-align: center;
+        line-height: 1.625;
+        font-size: 1.75rem;
+      }
 
-.content .slogan {
-  text-shadow: rgb(0 0 0 / 20%) 1px 1px 5px;
-  color: #5191d9;
-  text-transform: uppercase;
-  font-style: italic;
-  font-weight: 400;
-  text-align: center;
-  margin-bottom: 1.5rem;
-  line-height: 1.625;
-  font-size: 1.5rem;
-}
+      .desc {
+        margin-top: 3rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 0 18%;
+        line-height: 1.625;
+        font-size: 1rem;
+        font-weight: 500;
+        color: #36587c;
+      }
+    }
 
-.content .desc {
-  width: 100%;
-  margin-bottom: 1rem;
-  line-height: 1.625;
-  font-size: 1.25rem;
-  font-weight: 400;
-  color: #36587c;
-  text-align: center;
-}
+    .btns {
+      padding: 0 28%;
+      font-family: "YouSheBiaoTiHei";
+      font-size: 1.75rem;
+      display: flex;
+      flex-direction: row;;
+      justify-content: space-evenly;
+      align-items: center;
+      margin-top: 1.75rem;
+      
 
-.content .btns {
-  /* padding: 0 25%; */
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  margin-bottom: 1rem;
-}
+      .down {
+        cursor: pointer;
+        display: inline-block;
+        min-width: 154px;
+        padding: 8px 16px;
+        text-align: center;
+        color: #fff;
+        border: 1px solid #5191d9;
+        background-color: #5191d9;
+      }
 
-.content .btns .down {
-  cursor: pointer;
-  display: inline-block;
-  min-width: 159px;
-  height: 48px;
-  line-height: 48px;
-  margin-top: 24px;
-  margin-right: 24px;
-  padding: 0 16px;
-  text-align: center;
-  font-size: 18px;
-  color: #fff;
-
-  border: 1px solid #5191d9;
-  /* border-radius: 999px; */
-  background-color: #5191d9;
-}
-
-.content .btns .down:hover {
-  background: #78a6df;
-  border: 1px solid #78a6df;
-}
-
-.content .btns .sub {
-  color: #5191d9;
-  background-color: #fff;
-  border: 1px solid #5191d9;
-}
-
-.content .btns .sub:hover {
-  background-color: #78a6df;
-  border: 1px solid #78a6df;
-  color: #fff;
-}
-
-.content .btns .warn-sub{
-  color: #F56C6C;
-    background-color: #fff;
-    border: 1px solid #F56C6C;
-}
-
-.content .btns .warn-sub:hover{
-    color: #fff;
-    background-color: #f89898;
-    border: 1px solid #f89898;
+      .down:hover {
+        background: #78a6df;
+        border: 1px solid #78a6df;
+      }
+      .sub {
+        color: #5191d9;
+        background-color: #fff;
+        border: 1px solid #5191d9;
+      }
+      .sub:hover {
+        background-color: #78a6df;
+        border: 1px solid #78a6df;
+        color: #fff;
+      }
+      .warn-sub {
+        color: #f56c6c;
+        background-color: #fff;
+        border: 1px solid #f56c6c;
+      }
+      .warn-sub:hover {
+        color: #fff;
+        background-color: #f89898;
+        border: 1px solid #f89898;
+      }
+    }
+  }
 }
 
 .show {
@@ -288,6 +284,4 @@ const changeImg = (index) => {
   border-left-color: rgb(78, 134, 230);
   border-left-width: 4px;
 }
-
-
 </style>
