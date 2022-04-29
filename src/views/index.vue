@@ -53,7 +53,24 @@
       </div> -->
 
       <!-- 视频介绍弹窗 -->
-      <el-dialog v-model="showVideo" title="视频介绍" width="70%"></el-dialog>
+      <el-dialog
+        custom-class="dialog-video"
+        v-model="showVideo"
+        title="视频介绍"
+        width="70%"
+        :draggable="true"
+      >
+        <iframe
+          class="video"
+          src="//player.bilibili.com/player.html?aid=468157052&bvid=BV1K5411S7BV&cid=577015171&page=1"
+          scrolling="no"
+          border="0"
+          frameborder="no"
+          framespacing="0"
+          allowfullscreen="true"
+        >
+        </iframe>
+      </el-dialog>
     </div>
     <!-- 回到顶部 -->
     <el-backtop right="20"></el-backtop>
@@ -157,11 +174,10 @@ const changeImg = (index) => {
       font-family: "YouSheBiaoTiHei";
       font-size: 1.75rem;
       display: flex;
-      flex-direction: row;;
+      flex-direction: row;
       justify-content: space-evenly;
       align-items: center;
       margin-top: 1.75rem;
-      
 
       .down {
         cursor: pointer;
@@ -197,6 +213,13 @@ const changeImg = (index) => {
         color: #fff;
         background-color: #f89898;
         border: 1px solid #f89898;
+      }
+    }
+
+    .dialog-video {
+      .video {
+        width: 100%;
+        height: 500px;
       }
     }
   }
