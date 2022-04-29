@@ -4,9 +4,22 @@
       <img class="logo" :src="logoUrl" alt="serendipity-logo" />
       <h1 class="title">Serendipity 更新日志</h1>
     </div>
-
     <div class="row">
-      <div class="question">VERSION: 1.4.1802 (最新)</div>
+      <div class="question">VERSION: 2.4.29 (最新)</div>
+      <div class="content">
+        <p>1. 更换了ui界面，并且添加了两个主题，可以在右上角设置中自定义主题</p>
+        <p>2. 修复了win7的兼容问题，现在win7用户也能使用了</p>
+        <p>3. 修复了部分用户反应在游戏开启时，仍然没有检测到游戏的问题</p>
+        <p>4. 对局面板的显示逻辑做了更改，现在显示会比之前更流畅，并且对局信息将保留到重新开始列队</p>
+        <p>5. 功能界面对部分功能做了详细说明</p>
+        <p>6. 修复了黑名单同步时，可能发生云端数据被覆盖的问题</p>
+        <p>7. 自定义发送现在可以自定义快捷键了，并且多了更多自定义的内容。</p>
+        <p>8. 添加了排位模式自动禁选英雄的功能，可自定义两套方案！</p>
+        <p>0. 正在添加opgg数据一天天赋出装的功能</p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="question">VERSION: 1.4.1802</div>
       <div class="content">
         <p>1. 修复了游戏内发送的问题😆！！！</p>
         <p>2. 修复了大区显示错误的问题</p>
