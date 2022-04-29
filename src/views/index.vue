@@ -10,6 +10,7 @@
         <h2 class="desc">
           通过获取当前对局中所有玩家的历史20场对局数据，对每个玩家的历史对局数据进行算法评分。根据评分结果，得出每位玩家的大致游戏水平，在游戏中能做出针对性的判断结果。
         </h2>
+        <h2 class="desc">功能包括：马种评选，信息一键发送，发送自定义设置，自动接收对局，匹配秒选，排位自动禁选，段位伪造，状态修改，一键opgg天赋</h2>
       </div>
 
       <!-- 按钮 -->
@@ -26,19 +27,15 @@
           <div class="selection">
             <div class="box" @click="changeImg(1)">
               <h4 class="box-title">游戏面板</h4>
-              <p class="box-desc">当对局面板有显示内容时，即可通过快捷键在聊天框中发送当前对局内容。</p>
             </div>
             <div class="box" @click="changeImg(2)">
               <h4 class="box-title">特色功能</h4>
-              <p class="box-desc">自动接受对局，自动BP，更改段位、状态。一键观战，创建5v5训练模式</p>
             </div>
             <div class="box " @click="changeImg(3)">
               <h4 class="box-title">战绩查询</h4>
-              <p class="box-desc">获取玩家最近20把的战绩情况，无视WeGame的权限设置。</p>
             </div>
             <div class="box " @click="changeImg(4)">
               <h4 class="box-title">黑名单</h4>
-              <p class="box-desc">当再次遇到黑名单中的玩家为队友时，会在聊天界面发送消息进行提示。</p>
             </div>
           </div>
           <div class="img-list">
@@ -93,7 +90,7 @@ const changeImg = (index) => {
 
 .content {
   height: calc(100vh - 200px); /* 这个200px是header和footer的高度 */
-  width: 1200px;
+  width: 1400px;
   height: 100%;
   margin-right: auto;
   margin-left: auto;
@@ -122,7 +119,7 @@ const changeImg = (index) => {
 }
 
 .content .title {
-  font-size: 3rem;
+  font-size: 3.25rem;
   margin-bottom: 1.5rem;
   line-height: 1.1;
   font-weight: 900;
@@ -141,7 +138,7 @@ const changeImg = (index) => {
   text-align: center;
   margin-bottom: 1.5rem;
   line-height: 1.625;
-  font-size: 1.25rem;
+  font-size: 1.5rem;
 }
 
 .content .desc {
@@ -254,7 +251,7 @@ const changeImg = (index) => {
 }
 
 .content > .selection > .box {
-  width: 230px;
+  /* width: 230px; */
   /*padding: 10px;*/
   text-align: center;
   border: 1px solid #e8e8e8;

@@ -8,7 +8,7 @@
       <div class="menu">
         <div class="link" @click="routerTo('index')">首页</div>
         <div class="link" @click="routerTo(0)">下载</div>
-        <div class="link" @click="routerTo(1)">功能</div>
+        <!-- <div class="link" @click="routerTo(1)">功能</div> -->
         <div class="link warn-font" @click="routerTo(6)">更新日志</div>
         <div class="link" @click="routerTo(4)">常见问题</div>
         <div class="link warn-font" @click="routerTo(5)">诸神板</div>

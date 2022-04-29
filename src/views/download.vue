@@ -5,7 +5,7 @@
       <div class="info">
         <div class="title">Serendipity</div>
         <div class="title gap">英雄联盟对局助手</div>
-        <div class="desc">抓出队伍里的小内鬼，提升游戏体验！</div>
+        <div class="desc">这也许是你最好的游戏助手</div>
         <div class="btns">
           <div class="download" @click="toDownload">下载 Serendipity</div>
           <div class="desc">
