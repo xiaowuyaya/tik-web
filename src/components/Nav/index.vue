@@ -10,7 +10,7 @@
       />
       <!-- 菜单 -->
       <div class="menu">
-        <a href="#" class="current">首页</a>
+        <a href="#" class="current" @click="router.push('/')">首页</a>
         <a
           href="https://www.yuque.com/xiaowuyaya/serendipity/cgcfg2"
           target="_blank"
