@@ -1,25 +1,20 @@
-<script setup>
-import Layout from "@/components/layout.vue";
-console.log(">>> Serendipity 英雄联盟对局助手 <<<");
-</script>
-
 <template>
-  <Layout></Layout>
+  <router-view></router-view>
 </template>
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  color: #2c3e50;
-  /*background-color: #fafafa;*/
-}
+<script setup lang="ts">
+import Layout from "@/views/Layout/index.vue";
 
-html,
+console.log("Hello Serendipity");
+</script>
+
+<style>
 body,
 #app {
-  height: 100%;
-
+  width: 100%;
+  margin: 0;
+  font-family: "PingFang SC", "Helvetica Neue", "Microsoft Yahei", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 </style>
