@@ -24,6 +24,11 @@ const routes: Array<RouteRecordRaw> = [
         name: 'Contact',
         component: () => import('@/views/Contact/index.vue'),
       },
+      {
+        path: '/donate',
+        name: 'Donate',
+        component: () => import('@/views/Donate/index.vue'),
+      },
     ],
   },
   // 条款相关

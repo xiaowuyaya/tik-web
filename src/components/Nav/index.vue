@@ -6,11 +6,16 @@
         class="logo"
         :src="getImageUrl('nav-logo.png')"
         alt="Serendipity-Logo"
-        srcset=""
+        @click="router.push('/')"
       />
       <!-- 菜单 -->
       <div class="menu">
-        <a href="#" class="current" @click="router.push('/')">首页</a>
+        <a
+          href="#"
+          :class="route.name == 'Home' ? 'current' : ''"
+          @click="router.push('/')"
+          >首页</a
+        >
         <a
           href="https://www.yuque.com/xiaowuyaya/serendipity/cgcfg2"
           target="_blank"
@@ -23,8 +28,24 @@
           class=""
           >常见问题</a
         >
-        <a href="#" class="" @click="router.push('/bans')">诸神榜</a>
-        <a href="#" class="" @click="router.push('/contact')">联系作者</a>
+        <a
+          href="#"
+          :class="route.name == 'Bans' ? 'current' : ''"
+          @click="router.push('/bans')"
+          >诸神榜</a
+        >
+        <a
+          href="#"
+          :class="route.name == 'Donate' ? 'current' : ''"
+          @click="router.push('/donate')"
+          >捐赠</a
+        >
+        <a
+          href="#"
+          :class="route.name == 'Contact' ? 'current' : ''"
+          @click="router.push('/contact')"
+          >联系作者</a
+        >
       </div>
     </div>
   </div>
@@ -33,9 +54,11 @@
 <script setup lang="ts">
 // @ts-ignore
 import { getImageUrl } from "@/utils/util";
-import { useRouter } from "vue-router";
+import { useRouter, useRoute } from "vue-router";
+import { ref, watch, onBeforeMount } from "vue";
 
 const router = useRouter();
+const route = useRoute();
 </script>
 
 <style lang="scss" scoped>
@@ -54,8 +77,9 @@ const router = useRouter();
     justify-content: space-between;
     align-items: center;
     box-sizing: border-box;
-    height: 68px;
+    height: 78px;
     .logo {
+      cursor: pointer;
       height: 48px;
     }
 
@@ -76,7 +100,7 @@ const router = useRouter();
       }
 
       a:hover {
-        border-bottom: 2px solid #e1f0ff;
+        border-bottom: 2px solid #5191d9;
       }
     }
   }
