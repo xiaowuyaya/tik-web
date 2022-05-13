@@ -73,11 +73,20 @@ interface IBans {
 const emptyText = ref<string>("正在获取数据，请稍等...");
 const tableData = ref<IBans[]>([]);
 
-// onMounted(() => {
-api.getBansList().then((res: any) => {
-  tableData.value = res.data;
+onMounted(() => {
+  api
+    .getBansList()
+    .then((res: any) => {
+      tableData.value = res.data;
+    })
+    .catch((err: any) => {
+      // @ts-ignore
+      ElMessage({
+        type: "warning",
+        message: `加载数据失败请重新尝试`,
+      });
+    });
 });
-// });
 </script>
 
 <style lang="scss" scoped>

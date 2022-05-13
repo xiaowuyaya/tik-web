@@ -14,7 +14,9 @@
             </div>
             <!-- 按钮组 -->
             <div class="btns">
-              <div class="btn download">下载 Windows 版本 V2.5.13</div>
+              <div class="btn download" @click="download">
+                下载 Windows 版本 {{ versionCode }}
+              </div>
               <div class="btn sub">视频介绍</div>
             </div>
           </div>
@@ -31,7 +33,34 @@
 <script setup lang="ts">
 // @ts-ignore
 import { getImageUrl } from "@/utils/util";
-import { ref } from "vue";
+// @ts-ignore
+import api from "@/api/index";
+import { ref, onMounted } from "vue";
+
+const versionCode = ref<string>("");
+
+onMounted(() => {
+  api.getNewVersionCode().then((res: any) => {
+    versionCode.value = res.data;
+  });
+});
+
+const download = () => {
+  api
+    .getDownloadUrl()
+    .then((res: any) => {
+      window.open(res.data, "_blank");
+      // 下载统计
+      api.downloadStatistics();
+    })
+    .catch((err: any) => {
+      // @ts-ignore
+      ElMessage({
+        type: "warning",
+        message: `获取下载地址失败请重新尝试！`,
+      });
+    });
+};
 </script>
 
 <style lang="scss" scoped>

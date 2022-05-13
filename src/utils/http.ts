@@ -1,5 +1,4 @@
 import axios, { AxiosInstance, AxiosRequestConfig } from 'axios'
-import { ElMessage } from 'element-plus'
 
 // 接口类型和方法
 interface BaseType {
@@ -41,7 +40,7 @@ class AxiosHttpRequest implements BaseType {
   timeout: number
   constructor() {
     this.baseURL = import.meta.env.VITE_APP_BASE_API
-    this.timeout = 1500
+    this.timeout = 15000
   }
   // 配置参数
   getConfigParams() {
@@ -125,7 +124,11 @@ class AxiosHttpRequest implements BaseType {
             default:
               return '未知错误，请联系管理员'
           }
-          ElMessage.error(msg)
+          // @ts-ignore
+          // ElMessage({
+          //   message: msg,
+          //   type: 'error',
+          // })
           return Promise.reject(res.data)
         }
       },
@@ -139,11 +142,12 @@ class AxiosHttpRequest implements BaseType {
         } else if (message.includes('Request failed with status code')) {
           message = '系统接口' + message.substr(message.length - 3) + '异常'
         }
-        ElMessage.error({
-          message: message,
-          type: 'warning',
-          duration: 5 * 1000,
-        })
+        // @ts-ignore
+        // ElMessage({
+        //   message: message,
+        //   type: 'warning',
+        //   duration: 5 * 1000,
+        // })
 
         return Promise.reject(error)
       }
