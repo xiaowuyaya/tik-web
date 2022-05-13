@@ -4,7 +4,7 @@
       <!-- logo -->
       <img
         class="logo"
-        :src="getImageUrl('nav-logo.png')"
+        :src="qiniuImgs.nav_logo"
         alt="Serendipity-Logo"
         @click="router.push('/')"
       />
@@ -53,7 +53,7 @@
 
 <script setup lang="ts">
 // @ts-ignore
-import { getImageUrl } from "@/utils/util";
+import qiniuImgs from "@/utils/qiniu";
 import { useRouter, useRoute } from "vue-router";
 import { ref, watch, onBeforeMount } from "vue";
 

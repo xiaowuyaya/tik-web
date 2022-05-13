@@ -4,7 +4,7 @@
     <div class="content">
       <!-- 二维码 -->
       <div class="qr-code">
-        <img :src="getImageUrl('qrcode-group.png')" alt="" />
+        <img :src="qiniuImgs.qrcode_group" alt="" />
         <!-- 文本 -->
         <div>
           <div>加入对局助手QQ群</div>
@@ -29,8 +29,7 @@
           target="_blank"
           >常见问题</a
         >
-        <!-- TODO: 意见反馈 -->
-        <a class="link">意见反馈</a>
+        <a class="link" @click="showFeedback = true">意见反馈</a>
         <div class="link" @click="openRouteInNewWindow('contact')">
           联系开发者
         </div>
@@ -55,18 +54,94 @@
         >闽ICP备2022001163号</a
       >
     </div>
+
+    <!-- 反馈 -->
+    <el-dialog v-model="showFeedback" title="意见反馈" width="33%" center>
+      <el-form :model="feedBackForm" label-width="120px" label-position="top">
+        <el-form-item label="简要概括">
+          <el-input
+            v-model="feedBackForm.title"
+            placeholder="请简要概括你的问题"
+          />
+        </el-form-item>
+        <el-form-item label="详细说明" size="large">
+          <el-input
+            v-model="feedBackForm.content"
+            :rows="4"
+            type="textarea"
+            placeholder="请输入你所遇到的问题，并在末尾留下联系方式，我将尽快回复。"
+          />
+        </el-form-item>
+      </el-form>
+      <el-button type="primary" color="#24558b" @click="confirmFeedback"
+        >提交</el-button
+      >
+    </el-dialog>
   </div>
 </template>
 
 <script setup lang="ts">
-// @ts-ignore
-import { getImageUrl } from "@/utils/util";
 import { useRouter } from "vue-router";
+import { ref } from "vue";
+// @ts-ignore
+import api from "@/api/index";
+// @ts-ignore
+import qiniuImgs from "@/utils/qiniu";
 
 const router = useRouter();
 
+const showFeedback = ref<boolean>(false);
+const feedBackForm = ref<any>({
+  title: "",
+  content: "",
+});
+
 const openRouteInNewWindow = (routeName: string) => {
   window.open(router.resolve({ path: `/${routeName}` }).href, "_blank");
+};
+
+const confirmFeedback = () => {
+  if (!feedBackForm.value.title) {
+    // @ts-ignore
+    ElMessage({
+      message: "请输入简要概括",
+      type: "warning",
+      duration: 5 * 1000,
+    });
+    return;
+  }
+  if (!feedBackForm.value.content) {
+    // @ts-ignore
+    ElMessage({
+      message: "请输入详细描述",
+      type: "warning",
+      duration: 5 * 1000,
+    });
+    return;
+  }
+
+  const data = {
+    title: feedBackForm.value.title,
+    content: feedBackForm.value.content,
+  };
+
+  api
+    .getBansList(data)
+    .then((res: any) => {
+      // @ts-ignore
+      ElMessage({
+        type: "success",
+        message: `提交成功，感谢你的反馈！`,
+      });
+      showFeedback.value = false;
+    })
+    .catch((err: any) => {
+      // @ts-ignore
+      ElMessage({
+        type: "warning",
+        message: `提交失败：${err}`,
+      });
+    });
 };
 </script>
 

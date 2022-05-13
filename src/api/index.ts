@@ -46,4 +46,13 @@ api.getBansList = () => {
   })
 }
 
+// 添加反馈
+api.addFeedback = (data: object) => {
+  return http.request({
+    url: '/feedBack/add',
+    method: 'POST',
+    data,
+  })
+}
+
 export default api

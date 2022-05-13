@@ -5,11 +5,7 @@
         个人开发不易，目前项目的支出有 域名 以及
         服务器，如果你喜欢这个项目，不妨赞助一下开发者 ❤️
       </div>
-      <img
-        class="dev-img"
-        :src="getImageUrl('developing.png')"
-        alt="developing"
-      />
+      <img class="dev-img" :src="qiniuImgs.developing" alt="developing" />
       <!-- 按钮组 -->
       <div class="btns">
         <!-- 微信 -->
@@ -20,10 +16,7 @@
           <template #default>
             <div class="popover-box">
               <div class="title">微信 扫一扫</div>
-              <img
-                :src="getImageUrl('wechat-qrcode.png')"
-                alt="wechat-qrcode"
-              />
+              <img :src="qiniuImgs.wechat_qrcode" alt="wechat-qrcode" />
             </div>
           </template>
         </el-popover>
@@ -35,7 +28,7 @@
           <template #default>
             <div class="popover-box">
               <div class="title">支付宝 扫一扫</div>
-              <img :src="getImageUrl('ali-qrcode.png')" alt="ali-qrcode" />
+              <img :src="qiniuImgs.ali_qrcode" alt="ali-qrcode" />
             </div>
           </template>
         </el-popover>
@@ -46,7 +39,7 @@
 
 <script setup lang="ts">
 // @ts-ignore
-import { getImageUrl } from "@/utils/util";
+import qiniuImgs from "@/utils/qiniu";
 </script>
 
 <style lang="scss" scoped>

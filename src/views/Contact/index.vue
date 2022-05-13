@@ -2,10 +2,7 @@
   <div class="contact-container">
     <div class="content">
       <!-- 展示图片 -->
-      <img
-        :src="getImageUrl('IMG_20220513_192317.jpg')"
-        alt="IMG_20220513_192317"
-      />
+      <img :src="qiniuImgs.IMG_20220513_192317" alt="IMG_20220513_192317" />
       <!-- article -->
       <div class="article">
         <p>XiaoWuYaYa @ 福州，Java后端开发。</p>
@@ -37,10 +34,7 @@
               <template #default>
                 <div class="popover-box">
                   <div class="title">微信 扫一扫</div>
-                  <img
-                    :src="getImageUrl('person-wechat.png')"
-                    alt="person-wechat"
-                  />
+                  <img :src="qiniuImgs.person_wechat" alt="person-wechat" />
                 </div>
               </template>
             </el-popover>
@@ -66,7 +60,7 @@
 
 <script setup lang="ts">
 // @ts-ignore
-import { getImageUrl } from "@/utils/util";
+import qiniuImgs from "@/utils/qiniu";
 </script>
 
 <style lang="scss" scoped>

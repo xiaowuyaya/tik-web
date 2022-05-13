@@ -22,7 +22,7 @@
           </div>
           <!-- video -->
           <div class="video">
-            <img :src="getImageUrl('home-video-play.png')" alt="" />
+            <img :src="qiniuImgs.home_video_play" alt="home-video-play" />
           </div>
         </div>
       </div>
@@ -32,9 +32,9 @@
 
 <script setup lang="ts">
 // @ts-ignore
-import { getImageUrl } from "@/utils/util";
-// @ts-ignore
 import api from "@/api/index";
+// @ts-ignore
+import qiniuImgs from "@/utils/qiniu";
 import { ref, onMounted } from "vue";
 
 const versionCode = ref<string>("");
@@ -67,6 +67,9 @@ const download = () => {
 .home-container {
   width: 100%;
 
+  .white-bg {
+    background-color: #fff !important;
+  }
   .row {
     background-color: #f1f2f6;
 
