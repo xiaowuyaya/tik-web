@@ -81,7 +81,7 @@ import { ref } from "vue";
               display: inline-block;
               padding: 10px 20px;
               border-radius: 3px;
-              background-color: #172b4d;
+              background-color: #24558b;
               color: #fff;
               cursor: pointer;
               user-select: none;

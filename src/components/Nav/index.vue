@@ -10,12 +10,12 @@
       />
       <!-- 菜单 -->
       <div class="menu">
-        <a
-          href="#"
+        <div
           :class="route.name == 'Home' ? 'current' : ''"
           @click="router.push('/')"
-          >首页</a
         >
+          首页
+        </div>
         <a
           href="https://www.yuque.com/xiaowuyaya/serendipity/cgcfg2"
           target="_blank"
@@ -28,24 +28,24 @@
           class=""
           >常见问题</a
         >
-        <a
-          href="#"
+        <div
           :class="route.name == 'Bans' ? 'current' : ''"
           @click="router.push('/bans')"
-          >诸神榜</a
         >
-        <a
-          href="#"
-          :class="route.name == 'Donate' ? 'current' : ''"
+          诸神榜
+        </div>
+        <div
+          :class="['focus', route.name == 'Donate' ? 'current' : '']"
           @click="router.push('/donate')"
-          >捐赠</a
         >
-        <a
-          href="#"
+          捐赠
+        </div>
+        <div
           :class="route.name == 'Contact' ? 'current' : ''"
           @click="router.push('/contact')"
-          >联系作者</a
         >
+          联系作者
+        </div>
       </div>
     </div>
   </div>
@@ -80,13 +80,17 @@ const route = useRoute();
     height: 78px;
     .logo {
       cursor: pointer;
-      height: 48px;
+      height: 46px;
     }
 
     .menu {
       .current {
         color: #5191d9;
         border-bottom: 2px solid #5191d9;
+      }
+
+      .focus {
+        color: #f56c6c;
       }
 
       a {
@@ -100,6 +104,21 @@ const route = useRoute();
       }
 
       a:hover {
+        border-bottom: 2px solid #5191d9;
+      }
+
+      div {
+        cursor: pointer;
+        color: #172b4d;
+        display: inline-block;
+        margin-left: 18px;
+        text-decoration: none;
+        font-size: 16px;
+        user-select: none;
+        padding: 5px 0;
+      }
+
+      div:hover {
         border-bottom: 2px solid #5191d9;
       }
     }
