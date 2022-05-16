@@ -2,8 +2,8 @@
   <div class="donate-container">
     <div class="content">
       <div class="explanation">
-        个人开发不易，目前项目的支出有 域名 以及
-        服务器，如果你喜欢这个项目，不妨赞助一下开发者 ❤️
+        个人开发不易，目前项目的支出有 域名、
+        服务器以及CDN流量费用，如果你喜欢这个项目，不妨赞助一下开发者 ❤️
       </div>
       <img class="dev-img" :src="qiniuImgs.developing" alt="developing" />
       <!-- 按钮组 -->

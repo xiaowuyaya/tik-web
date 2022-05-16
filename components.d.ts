@@ -10,8 +10,6 @@ declare module 'vue' {
     ElFormItem: typeof import('element-plus/es')['ElFormItem']
     ElInput: typeof import('element-plus/es')['ElInput']
     ElPopover: typeof import('element-plus/es')['ElPopover']
-    ElTable: typeof import('element-plus/es')['ElTable']
-    ElTableColumn: typeof import('element-plus/es')['ElTableColumn']
     Footer: typeof import('./src/components/Footer/index.vue')['default']
     Nav: typeof import('./src/components/Nav/index.vue')['default']
   }
