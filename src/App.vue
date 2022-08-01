@@ -1,20 +1,23 @@
+<script setup lang="ts"></script>
+
 <template>
-  <router-view></router-view>
+  <div class="relative antialiased h-full w-full">
+    <router-view></router-view>
+  </div>
 </template>
 
-<script setup lang="ts">
-import Layout from "@/views/Layout/index.vue";
-
-console.log("Hello Serendipity");
-</script>
-
 <style>
+@import url('./style/font.css');
+html,
 body,
 #app {
-  width: 100%;
-  margin: 0;
-  font-family: "PingFang SC", "Helvetica Neue", "Microsoft Yahei", sans-serif;
+  text-rendering: optimizeLegibility;
+  font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  margin: 0;
 }
 </style>

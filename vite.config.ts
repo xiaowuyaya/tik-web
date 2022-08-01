@@ -1,30 +1,32 @@
+import { resolve } from 'path'
 import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
+import WindiCSS from 'vite-plugin-windicss'
 import AutoImport from 'unplugin-auto-import/vite'
-import Components from 'unplugin-vue-components/vite'
-import { ElementPlusResolver } from 'unplugin-vue-components/resolvers'
-import { resolve } from 'path'
-
-// https://vitejs.dev/config/
+import Components from 'unplugin-vue-components/vite';
+import { ArcoResolver } from 'unplugin-vue-components/resolvers';
 export default defineConfig({
   plugins: [
+    WindiCSS(),
     vue(),
     AutoImport({
-      resolvers: [ElementPlusResolver()],
+      resolvers: [ArcoResolver()],
     }),
     Components({
-      resolvers: [ElementPlusResolver()],
+      resolvers: [
+        ArcoResolver({
+          sideEffect: true
+        })
+      ]
     }),
   ],
   resolve: {
     alias: {
-      '@': resolve(__dirname, 'src'), // 配置 @ 指向 src
-    },
+      '@': resolve(__dirname, 'src')
+    }
   },
-  base: './', // 打包路径
   server: {
-    port: 7333, // 端口
-    open: true, // 是否自动打开浏览器
-    cors: true, // 跨域
-  },
+    port: 8888,
+    cors: true,
+  }
 })

@@ -1,52 +1,27 @@
-import { createRouter, createWebHistory, RouteRecordRaw } from 'vue-router'
-
-const history = createWebHistory()
+import { createRouter, createWebHistory, RouteRecordRaw } from "vue-router";
 
 const routes: Array<RouteRecordRaw> = [
   {
     path: '/',
-    name: 'Layout',
-    redirect: '/home',
-    component: () => import('@/views/Layout/index.vue'),
+    redirect: '/index'
+  },
+  {
+    path: '/layout',
+    name: 'layout',
+    component: () => import('@/views/layout/index.vue'),
     children: [
       {
-        path: '/home',
-        name: 'Home',
-        component: () => import('@/views/Home/index.vue'),
-      },
-      {
-        path: '/bans',
-        name: 'Bans',
-        component: () => import('@/views/Bans/index.vue'),
-      },
-      {
-        path: '/contact',
-        name: 'Contact',
-        component: () => import('@/views/Contact/index.vue'),
-      },
-      {
-        path: '/donate',
-        name: 'Donate',
-        component: () => import('@/views/Donate/index.vue'),
-      },
-    ],
-  },
-  // 条款相关
-  {
-    path: '/agreement',
-    name: 'Agreement',
-    component: () => import('@/views/Terms/agreement.vue'),
-  },
-  {
-    path: '/privacy',
-    name: 'Privacy',
-    component: () => import('@/views/Terms/privacy.vue'),
-  },
+        path: '/index',
+        name: 'index',
+        component: () => import('@/views/index/index.vue')
+      }
+    ]
+  }
 ]
 
 const router = createRouter({
-  history,
-  routes,
+  history: createWebHistory(),
+  routes
 })
 
 export default router
