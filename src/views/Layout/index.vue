@@ -1,6 +1,6 @@
 <template>
   <Header class="header"></Header>
-  <router-view class="mt-[4.5rem]"></router-view>
+  <router-view ></router-view>
   <Footer></Footer>
 </template>
 

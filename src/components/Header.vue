@@ -13,62 +13,79 @@
           Tik英雄联盟对局助手
         </a>
       </div>
-      <div
-        class="flex items-center order-last ml-2 lg:order-none lg:flex-1 lg:ml-4 xl:ml-10"
-      ></div>
       <!-- nav -->
-      <div class="hidden lg:flex items-center flex-1 text-base">
+      <div class="hidden lg:flex justify-end items-center flex-1 text-lg">
         <div
-          class="select-none relative inline-flex items-center p-2 border-transparent border-b-2 hover:border-blue-500 !border-b-2"
+          :class="
+            route.name == 'index'
+              ? 'font-bold text-tik-primary border-tik-primary'
+              : ''
+          "
+          class="select-none relative inline-flex items-center p-2 border-transparent border-b-2 mx-1.5 hover:border-blue-500 !border-b-2"
         >
-          <a class="inline-flex items-center transition duration-50" href="#"
+          <a
+            class="inline-flex items-center transition duration-50"
+            href="#"
+            @click="router.push('/')"
             >指引</a
           >
         </div>
         <div
-          class="no-underline select-none relative inline-flex items-center p-2 border-transparent border-b-2 hover:border-blue-500 !border-b-2"
+          class="no-underline select-none relative inline-flex items-center p-2 border-transparent border-b-2 mx-1.5 hover:border-blue-500 !border-b-2"
         >
-          <a class="inline-flex items-center transition duration-50" href="#"
+          <a
+            class="inline-flex items-center transition duration-50"
+            href="https://www.yuque.com/xiaowuyaya/serendipity/cgcfg2"
+            target="_blank"
             >更新日志</a
           >
         </div>
         <div
-          class="no-underline select-none relative inline-flex items-center p-2 border-transparent border-b-2 hover:border-blue-500 !border-b-2"
+          class="no-underline select-none relative inline-flex items-center p-2 border-transparent border-b-2 mx-1.5 hover:border-blue-500 !border-b-2"
         >
-          <a class="inline-flex items-center transition duration-50" href="#"
+          <a
+            class="inline-flex items-center transition duration-50"
+            href="https://www.yuque.com/xiaowuyaya/serendipity/gepf8k"
+            target="_blank"
             >常见问题</a
           >
         </div>
-        <div
-          class="no-underline select-none relative inline-flex items-center p-2 border-transparent border-b-2 hover:border-blue-500 !border-b-2"
+        <!-- <div
+          :class="
+            route.name == 'blackList'
+              ? 'font-bold text-tik-primary border-tik-primary'
+              : ''
+          "
+          class="no-underline select-none relative inline-flex items-center p-2 border-transparent border-b-2 mx-1.5 hover:border-blue-500 !border-b-2"
         >
           <a class="inline-flex items-center transition duration-50" href="#"
             >诸神榜</a
           >
-        </div>
+        </div> -->
         <div
-          class="no-underline select-none relative inline-flex items-center p-2 border-transparent border-b-2 hover:border-blue-500 !border-b-2"
+          :class="route.name == 'donate' ? 'font-bold border-tik-primary' : ''"
+          class="no-underline select-none relative inline-flex items-center p-2 border-transparent border-b-2 mx-1.5 hover:border-blue-500 !border-b-2"
         >
           <a
             class="inline-flex items-center transition duration-50 text-red-500"
             href="#"
+            @click="router.push('/donate')"
             >捐助项目</a
-          >
-        </div>
-        <div
-          class="no-underline select-none relative inline-flex items-center p-2 border-transparent border-b-2 hover:border-blue-500 !border-b-2"
-        >
-          <a class="inline-flex items-center transition duration-50" href="#"
-            >联系作者</a
           >
         </div>
       </div>
       <!-- 社交 -->
       <div class="flex items-center lg:space-x-3 lg:pl-3 xl:pl-6">
-        <a href="#" class="inline-flex text-xl p-2 lg:inline-flex"
+        <a
+          class="inline-flex text-xl p-2 lg:inline-flex"
+          href="https://github.com/xiaowuyaya"
+          target="_blank"
           ><icon-github size="1.5rem"
         /></a>
-        <a href="#" class="inline-flex text-xl p-2 lg:inline-flex"
+        <a
+          class="inline-flex text-xl p-2 lg:inline-flex"
+          href="https://qm.qq.com/cgi-bin/qm/qr?k=9HNfbMmM3ISfaX2YBjyJrD5r_Xgt8Bio&jump_from=webapi"
+          target="_blank"
           ><icon-qq-circle-fill size="1.5rem"
         /></a>
       </div>
@@ -76,4 +93,9 @@
   </div>
 </template>
 
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import { useRouter, useRoute } from 'vue-router'
+
+const router = useRouter()
+const route = useRoute()
+</script>

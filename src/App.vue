@@ -1,7 +1,7 @@
 <script setup lang="ts"></script>
 
 <template>
-  <div class="relative antialiased h-full w-full">
+  <div class="relative antialiased h-full w-full font-pingfang">
     <router-view></router-view>
   </div>
 </template>
@@ -11,8 +11,9 @@
 html,
 body,
 #app {
+  color: #1f2937;
+  background-color: #fcfcfc;
   text-rendering: optimizeLegibility;
-  font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   width: 100%;
