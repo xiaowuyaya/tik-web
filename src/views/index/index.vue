@@ -39,9 +39,32 @@
                 <a
                   href="#"
                   class="text-base font-extrabold inline-block text-tik-primary rounded-md hover:shadow-sm hover:bg-tik-primary hover:text-white focus:ring-3 ring-opacity-50 text-base px-3 py-2.5 md:text-lg md:px-4 md:py-3 border-2 border-tik-primary"
+                  @click="showVideo = true"
                   >视频介绍</a
                 >
               </div>
+              <a-modal
+                v-model:visible="showVideo"
+                width="60%"
+                title="视频介绍"
+                draggable
+                :footer="false"
+                simple
+              >
+                <div class="flex justify-center items-center">
+                  <iframe
+                    src="//player.bilibili.com/player.html?aid=939716817&bvid=BV1yW4y1C7or&cid=736144014&page=1"
+                    height="600px"
+                    width="100%"
+                    scrolling="no"
+                    border="0"
+                    frameborder="no"
+                    framespacing="0"
+                    allowfullscreen="true"
+                  >
+                  </iframe>
+                </div>
+              </a-modal>
             </div>
           </div>
           <div class="px-2 flex justify-center">
@@ -65,6 +88,7 @@ import { getLastVersionCode, getLastVersionUrl } from '../../api/web.js'
 const curVersion = ref<string>('0.0.0')
 const downloadUrl = ref<string>('')
 const showError = ref<boolean>(false)
+const showVideo = ref<boolean>(false)
 
 onBeforeMount(async () => {
   try {

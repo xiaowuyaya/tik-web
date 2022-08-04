@@ -50,7 +50,7 @@
             >常见问题</a
           >
         </div>
-        <!-- <div
+        <div
           :class="
             route.name == 'blackList'
               ? 'font-bold text-tik-primary border-tik-primary'
@@ -58,10 +58,13 @@
           "
           class="no-underline select-none relative inline-flex items-center p-2 border-transparent border-b-2 mx-1.5 hover:border-blue-500 !border-b-2"
         >
-          <a class="inline-flex items-center transition duration-50" href="#"
+          <a
+            class="inline-flex items-center transition duration-50"
+            href="#"
+            @click="$message.warning('诸神榜存在部分问题，仍在更新中...')"
             >诸神榜</a
           >
-        </div> -->
+        </div>
         <div
           :class="route.name == 'donate' ? 'font-bold border-tik-primary' : ''"
           class="no-underline select-none relative inline-flex items-center p-2 border-transparent border-b-2 mx-1.5 hover:border-blue-500 !border-b-2"
