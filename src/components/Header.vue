@@ -14,11 +14,11 @@
         </a>
       </div>
       <!-- nav -->
-      <div class="hidden lg:flex justify-end items-center flex-1 text-lg">
+      <div class="hidden lg:flex justify-end items-center flex-1 text-base">
         <div
           :class="
             route.name == 'index'
-              ? 'font-bold text-tik-primary border-tik-primary'
+              ? 'font-bold  border-blue-500 !border-b-2'
               : ''
           "
           class="select-none relative inline-flex items-center p-2 border-transparent border-b-2 mx-1.5 hover:border-blue-500 !border-b-2"
@@ -66,7 +66,7 @@
           >
         </div>
         <div
-          :class="route.name == 'donate' ? 'font-bold border-tik-primary' : ''"
+          :class="route.name == 'donate' ? 'font-bold border-blue-500 !border-b-2' : ''"
           class="no-underline select-none relative inline-flex items-center p-2 border-transparent border-b-2 mx-1.5 hover:border-blue-500 !border-b-2"
         >
           <a

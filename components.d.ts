@@ -8,13 +8,11 @@ export {}
 declare module '@vue/runtime-core' {
   export interface GlobalComponents {
     AAlert: typeof import('@arco-design/web-vue')['Alert']
-    AButton: typeof import('@arco-design/web-vue')['Button']
     AImage: typeof import('@arco-design/web-vue')['Image']
     AModal: typeof import('@arco-design/web-vue')['Modal']
     APopover: typeof import('@arco-design/web-vue')['Popover']
     Footer: typeof import('./src/components/Footer.vue')['default']
     Header: typeof import('./src/components/Header.vue')['default']
-    HelloWorld: typeof import('./src/components/HelloWorld.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
   }

@@ -31,9 +31,9 @@
               <!-- btns -->
               <div class="flex space-x-4 mt-8 justify-center">
                 <a
-                  href="#"
                   class="text-base font-normal inline-block text-white bg-tik-primary rounded-md hover:shadow-sm hover:bg-tik-primaryhover focus:ring-3 ring-opacity-50 text-base px-3 py-2.5 md:text-lg md:px-4 md:py-3 border-2 border-transparent"
-                  @click="handleDownload"
+                  :href="downloadUrl"
+                  target="_blank"
                   >下载桌面应用</a
                 >
                 <a
@@ -101,6 +101,4 @@ onBeforeMount(async () => {
     showError.value = true
   }
 })
-
-function handleDownload() {}
 </script>
