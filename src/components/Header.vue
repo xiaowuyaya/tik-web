@@ -25,7 +25,6 @@
         >
           <a
             class="inline-flex items-center transition duration-50"
-            href="#"
             @click="router.push('/')"
             >指引</a
           >
@@ -60,7 +59,6 @@
         >
           <a
             class="inline-flex items-center transition duration-50"
-            href="#"
             @click="$message.warning('诸神榜存在部分问题，仍在更新中...')"
             >诸神榜</a
           >
@@ -71,7 +69,6 @@
         >
           <a
             class="inline-flex items-center transition duration-50 text-red-500"
-            href="#"
             @click="router.push('/donate')"
             >捐助项目</a
           >
