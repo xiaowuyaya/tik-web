@@ -15,7 +15,7 @@ export default function Nav() {
   return (
     <div className='nav-container'>
       <div className="nav-content">
-        <img className="nav-logo" src="/public/tik.png" alt="logo"/>
+        <img className="nav-logo" src="/tik.png" alt="logo"/>
         <ul className="nav-menu">
           <li className={menuActive('/')}><a onClick={() => { navigate('/') }}>首页</a></li>
           <li className={menuActive('/release')}><a onClick={() => { navigate('/release') }}>更新记录</a></li>
