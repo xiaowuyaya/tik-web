@@ -1,8 +1,6 @@
+import { Message } from '@arco-design/web-react'
 import axios, { AxiosInstance, AxiosRequestConfig } from 'axios'
-import { Message, Modal } from '@arco-design/web-vue';
-import { getToken, removeToken } from './auth'
 
-// 接口类型和方法
 interface BaseType {
   baseURL: string
   getConfigParams(): any
@@ -37,12 +35,13 @@ let removeSource = (config: any) => {
   }
 }
 
+
 class AxiosHttpRequest implements BaseType {
   baseURL: string
   timeout: number
 
   constructor() {
-    this.baseURL = import.meta.env.VITE_APP_BASE_API
+    this.baseURL = 'https://tik.lol-tool.com'
     this.timeout = 15000
   }
 
@@ -66,12 +65,11 @@ class AxiosHttpRequest implements BaseType {
         sources.push({ umet: config.url + '&' + config.method, cancel: c })
       })
       // 请求头携带token
-      config.headers['Authorization'] = getToken()
       config.headers['Content-Type'] = 'application/json;charset=utf-8'
 
-       // 添加时间戳
-       config.data = {...config.data, _t: Date.now()}
-       config.params = {...config.params, _t: Date.now()}
+      // 添加时间戳
+      config.data = {...config.data, _t: Date.now()}
+      config.params = {...config.params, _t: Date.now()}
 
       // get请求映射params参数
       if (config.method === 'get' && config.params) {
@@ -114,21 +112,6 @@ class AxiosHttpRequest implements BaseType {
           content: msg,
           duration: 2000
         })
-        if (code == 11001 || code == 11002) {
-          Modal.error({
-            title: '登入状态异常',
-            content:
-              '当前登入状态异常，请重新登入。',
-            okText: '重新登入',
-            maskClosable: false,
-            escToClose: false,
-            simple: true,
-            async onOk() {
-              removeToken()
-              window.location.reload();
-            },
-          });
-        }
         return Promise.reject(res.data)
       }
     }, (err) => {
@@ -149,10 +132,10 @@ class AxiosHttpRequest implements BaseType {
   }
 
   /**
- * 外部调用方法
- * @param options axios请求参数
- * @returns 实例
- */
+   * 外部调用方法
+   * @param options axios请求参数
+   * @returns 实例
+   */
   request(options: AxiosRequestConfig) {
     const instance = axios.create()
     options = Object.assign(this.getConfigParams(), options)

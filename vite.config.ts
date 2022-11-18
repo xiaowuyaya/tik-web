@@ -1,32 +1,17 @@
-import { resolve } from 'path'
 import { defineConfig } from 'vite'
-import vue from '@vitejs/plugin-vue'
-import WindiCSS from 'vite-plugin-windicss'
-import AutoImport from 'unplugin-auto-import/vite'
-import Components from 'unplugin-vue-components/vite';
-import { ArcoResolver } from 'unplugin-vue-components/resolvers';
+import react from '@vitejs/plugin-react'
+import path from 'path'
+import {vitePluginForArco} from "@arco-plugins/vite-react";
+
+// https://vitejs.dev/config/
 export default defineConfig({
   plugins: [
-    WindiCSS(),
-    vue(),
-    AutoImport({
-      resolvers: [ArcoResolver()],
-    }),
-    Components({
-      resolvers: [
-        ArcoResolver({
-          sideEffect: true
-        })
-      ]
-    }),
+    react(),
+    vitePluginForArco()
   ],
   resolve: {
     alias: {
-      '@': resolve(__dirname, 'src')
+      '@': path.resolve(__dirname, 'src')
     }
-  },
-  server: {
-    port: 8888,
-    cors: true,
   }
 })
