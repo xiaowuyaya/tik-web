@@ -48,6 +48,7 @@ const intros = [
 ]
 
 const qqGroup = 'https://qm.qq.com/cgi-bin/qm/qr?k=9HNfbMmM3ISfaX2YBjyJrD5r_Xgt8Bio&jump_from=webapi'
+const biliVideo = 'https://www.bilibili.com/video/BV1yW4y1C7or/?zw'
 
 export default function Home() {
 
@@ -74,7 +75,7 @@ export default function Home() {
         </div>
         <div className="home-content__btns">
           <a href={releaseInfo.url} target="_blank" className="btn btn__primary">立即下载</a>
-          <a className="btn">视频介绍</a>
+          <a href={biliVideo} target="_blank" className="btn">视频介绍</a>
           <a href={qqGroup} target="_blank" className="btn">加群交流</a>
         </div>
         <div className="home-content__more" onClick={() => {
