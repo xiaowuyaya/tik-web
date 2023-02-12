@@ -5,6 +5,7 @@ export const useAppStore = defineStore({
   state: () => {
     return {
       downloadUrl: '',
+      version: ''
     }
   },
 })

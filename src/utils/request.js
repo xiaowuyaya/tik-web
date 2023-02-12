@@ -16,7 +16,7 @@ let removeSource = config => {
 
 class AxiosHttpRequest {
   constructor() {
-    this.baseURL = 'https://tik.lol-tool.com'
+    this.baseURL = 'https://tik-api.doii.cc'
     this.timeout = 10000
   }
 

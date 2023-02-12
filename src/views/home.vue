@@ -16,6 +16,7 @@
         <span class="home-wrapper-btn__text">Windows 版本下载</span>
       </a>
     </div>
+    <span class="text-sm mt-2 !text-gray-200">当前版本：{{appStore.version}}</span>
     <footer class="text-center text-sm absolute bottom-1">
       <a href="https://beian.miit.gov.cn/" target="_blank">闽ICP备2022001163号</a> |
       <span>Copyright © 2022 - {{new Date().getFullYear()}} XiaoWuYaYa Contributors</span> |

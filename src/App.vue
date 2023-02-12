@@ -1,11 +1,12 @@
 <script setup>
-import { lastVersionUrl } from './api/common.js'
 import { useAppStore } from './store/index.js'
+import {latestInfo} from "./api/common.js";
 
 const appStore = useAppStore()
 
-lastVersionUrl().then(res => {
-  appStore.downloadUrl = res.data
+latestInfo().then(res => {
+  appStore.downloadUrl = res.data.url
+  appStore.version = res.data.version
 })
 </script>
 
